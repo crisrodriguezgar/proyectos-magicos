@@ -1,0 +1,57 @@
+.main {
+  display: flex;
+  padding-top: 50px;
+  height: 80vh;
+}
+
+.preview {
+  width: 60%;
+  padding: 20px;
+
+  &_image {
+    object-fit: cover;
+    width: 100%;
+    height: 80%;
+  }
+
+  &_autor {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: none;
+    background-color: white;
+    color: #3e3e3e;
+    width: 90%;
+    height: 50%;
+    transform: translateY(-100px);
+    margin: auto;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 40px;
+    padding: 30px;
+    overflow-y: scroll;
+  }
+}
+
+.infoProject {
+  width: 60%;
+
+  &_subtitle {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  &_line {
+    width: 100%;
+    border: 0;
+    height: 1px;
+
+    background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0),
+      rgba(1, 1, 1, 0.75),
+      rgba(255, 255, 255, 0)
+    );
+  }
+}
