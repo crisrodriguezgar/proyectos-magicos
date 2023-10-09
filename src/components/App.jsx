@@ -50,9 +50,9 @@ function App() {
               <p className="infoProject_subtitle">Personal Project Card</p>
               <hr className="infoProject_line" />
 
-              <h2 className="title">{name || 'Elegant Workspace'}</h2>
-              <p className="slogan">{slogan || 'Diseños Exclusivos'}</p>
-              <p className="desc">
+              <h2 className="infoProject_title">{name || 'Elegant Workspace'}</h2>
+              <p className="infoProject_slogan">{slogan || 'Diseños Exclusivos'}</p>
+              <p className="infoProject_desc">
                 {desc ||
                   `Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                 Libero, delectus? Voluptates at hic aliquam porro ad suscipit
@@ -60,7 +60,7 @@ function App() {
                 accusantium placeat odit corrupti ipsum!`}
               </p>
               <section className="technologies">
-                <p className="text">{technologies || 'React JS, MongoDB'}</p>
+                <p className="technologies_text">{technologies || 'React JS, MongoDB'}</p>
               </section>
             </section>
 
@@ -75,9 +75,9 @@ function App() {
         <section className="form">
           <h2 className="title">Información</h2>
 
-          <section className="ask-info">
-            <p className="subtitle">Cuéntanos sobre el proyecto</p>
-            <hr className="line" />
+          <section className="askInfo">
+            <p className="askInfo_subtitle">Cuéntanos sobre el proyecto</p>
+            <hr className="askInfo_line" />
           </section>
 
           <fieldset className="project">
