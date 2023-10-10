@@ -1,7 +1,8 @@
-.main .title {
+/*.main .title {
+  ///Este title es del form
   color: #ffffff;
   text-align: center;
-}
+}*/
 
 // .main .ask-info {
 //   padding: 20px;
@@ -25,19 +26,19 @@
 //   );
 // }
 
-.main .form {
+/*.main .form {
   background-color: #302c42;
   width: 40%;
-}
+}*/
 
-.main .project {
+/*.main .project {
   display: flex;
   flex-direction: column;
   gap: 10px;
   border: none;
-}
+}*/
 
-.main .input,
+/*.main .input,
 .textarea {
   background-color: #302c42;
   border-color: white;
@@ -46,17 +47,17 @@
   color: #ffffff;
   padding-left: 15px;
   padding-top: 5px;
-}
-.main .input::placeholder,
+}*/
+/*.main .input::placeholder,
 .textarea::placeholder {
   color: #ffffff;
-}
+}*/
 
-.main .textarea {
+/*.main .textarea {
   height: 110px;
-}
+}*/
 
-.main .buttons-img {
+/*.main .buttons-img {
   text-align: center;
 }
 
@@ -71,19 +72,19 @@
   height: 43px;
   background: linear-gradient(90deg, #8176af -1.57%, #c0b7e8 98.43%);
   border-radius: 40px;
-}
+}*/
 
-.main .btn-large {
+/*.main .btn-large {
   width: 200px;
   border: solid 2px white;
-}
+}*/
 
-.info-autor {
+/*.info-autor {
   width: 40%;
   text-align: center;
-}
+}*/
 
-.info-autor .image {
+/*.info-autor .image {
   border-radius: 50%;
   width: 80px;
   height: 110px;
@@ -97,7 +98,7 @@
 
 .info-autor .name {
   font-size: 16px;
-}
+}*/
 
 // .info-project .title {
 //   font-size: 20px;
@@ -115,7 +116,7 @@
 //   margin-bottom: 10px;
 // }
 
-.btn-color {
+/*.btn-color {
   border-radius: 20px;
   width: 85px;
   height: 30px;
@@ -125,7 +126,7 @@
 .btn-color-dark {
   background-color: black;
   color: white;
-}
+}*/
 
 // .technologies {
 //   background-color: lightgray;
@@ -135,12 +136,12 @@
 //   width: 70%;
 // }
 
-.card {
+/*.card {
   color: white;
   text-align: center;
   padding: 20px;
-}
+}*/
 
-.hidden {
+/*.hidden {
   display: none;
-}
+}*/

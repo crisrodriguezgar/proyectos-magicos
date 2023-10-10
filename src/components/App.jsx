@@ -100,25 +100,25 @@ function App() {
               </section>
             </section>
 
-            <section className="info-autor">
-              <img className="image" src={user} alt="" />
-              <p className="job">{job || 'Full Stack Developer'}</p>
-              <p className="name">{author || 'Emmelie Björklund'}</p>
+            <section className="infoAutor">
+              <img className="infoAutor_image" src={user} alt="" />
+              <p className="infoAutor_job">{job || 'Full Stack Developer'}</p>
+              <p className="infoAutor_name">{author || 'Emmelie Björklund'}</p>
             </section>
           </section>
         </section>
 
         <section className="form">
-          <h2 className="title">Información</h2>
+          <h2 className="form_title">Información</h2>
 
-          <section className="askInfo">
-            <p className="askInfo_subtitle">Cuéntanos sobre el proyecto</p>
-            <hr className="askInfo_line" />
+          <section className="form_askInfo">
+            <p className="form_askInfo-subtitle">Cuéntanos sobre el proyecto</p>
+            <hr className="form_askInfo-line" />
           </section>
 
-          <fieldset className="project">
+          <fieldset className="form_project">
             <input
-              className="input"
+              className="form_project-input"
               type="text"
               placeholder="Nombre del proyecto *"
               name="name"
@@ -129,7 +129,7 @@ function App() {
             />
             <p className='error'>{errorName}</p>
             <input
-              className="input"
+              className="form_project-input"
               type="text"
               name="slogan"
               id="slogan"
@@ -140,7 +140,7 @@ function App() {
             />
             <p className='error'>{errorSlogan}</p>
             <input
-              className="input"
+              className="form_project-input"
               type="text"
               name="repo"
               id="repo"
@@ -150,7 +150,7 @@ function App() {
             />
             <p className='error'></p>
             <input
-              className="input"
+              className="form_project-input"
               type="text"
               placeholder="Demo *"
               name="demo"
@@ -160,7 +160,7 @@ function App() {
             />
             <p className='error'></p>
             <input
-              className="input"
+              className="form_project-input"
               type="text"
               placeholder="Tecnologías *"
               name="technologies"
@@ -171,7 +171,7 @@ function App() {
             />
             <p className='error'>{errorTech}</p>
             <textarea
-              className="textarea"
+              className="form_project-textarea"
               type="text"
               placeholder="Descripción *"
               name="desc"
@@ -183,14 +183,14 @@ function App() {
             <p className='error'>{errorDesc}</p>
           </fieldset>
 
-          <section className="ask-info">
-            <p className="subtitle">Cuéntanos sobre la autora</p>
-            <hr className="line" />
+          <section className="form_askInfo">
+            <p className="form_askInfo-subtitle">Cuéntanos sobre la autora</p>
+            <hr className="form_askInfo-line" />
           </section>
 
           <fieldset className="autor">
             <input
-              className="input"
+              className="form_project-input"
               type="text"
               placeholder="Nombre *"
               name="author"
@@ -201,7 +201,7 @@ function App() {
             />
             <p className='error'>{errorAuthor}</p>
             <input
-              className="input"
+              className="form_project-input"
               type="text"
               placeholder="Trabajo *"
               name="job"
@@ -213,17 +213,17 @@ function App() {
             <p className='error'>{errorJob}</p>
           </fieldset>
 
-          <section className="buttons-img">
-            <button className="btn">Subir foto de proyecto</button>
-            <button className="btn">Subir foto de autora</button>
+          <section className="form_btnImg">
+            <button className="form_btnImg-btn">Subir foto de proyecto</button>
+            <button className="form_btnImg-btn">Subir foto de autora</button>
           </section>
-          <section className="buttons-img">
-            <button className="btn-large" onClick={handleClickCreateCard}>
+          <section className="form_btnImg">
+            <button className="form_btnImg-large" onClick={handleClickCreateCard}>
               Crear Tarjeta
             </button>
           </section>
 
-          <section className="card">
+          <section className="form_card">
             <span className=""> La tarjeta ha sido creada: </span>
             <a href="" className="" target="_blank" rel="noreferrer">
               {' '}

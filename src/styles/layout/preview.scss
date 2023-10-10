@@ -53,49 +53,47 @@
       rgba(1, 1, 1, 0.75),
       rgba(255, 255, 255, 0)
     );
-    &_title{
+    &_title {
       font-size: 20px;
       color: black;
       margin-bottom: 10px;
     }
-    &_slogan{
+    &_slogan {
       font-size: 14px;
       margin-bottom: 10px;
     }
-    &_desc{
+    &_desc {
       font-size: 12px;
       margin-bottom: 10px;
     }
   }
 }
 
-.technologies{
+.technologies {
   background-color: lightgray;
   border-radius: 20px;
   font-size: 14px;
   padding: 10px;
   width: 70%;
-  &_text{
+  &_text {
     color: red;
   }
 }
 
-.askInfo{
-  padding: 20px;
+.infoAutor {
+  width: 40%;
   text-align: center;
-  color: white;
-  &_subtitle{
-    padding-bottom: 10px;
+  &_image {
+    border-radius: 50%;
+    width: 80px;
+    height: 110px;
   }
-  &_line{
-    width: 100%;
-  border: 0;
-  height: 1px;
-  background-image: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0),
-    rgba(255, 255, 255, 0.75),
-    rgba(255, 255, 255, 0)
-  );
+  &_job {
+    font-weight: bold;
+    color: black;
+    font-size: 14px;
+  }
+  &_name {
+    font-size: 16px;
   }
 }
