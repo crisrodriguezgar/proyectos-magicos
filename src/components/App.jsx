@@ -10,9 +10,15 @@ function App() {
   const [slogan, setSlogan] = useState('');
   const [technologies, setTechnologies] = useState('');
   const [desc, setDesc] = useState('');
-  const [autor, setAutor] = useState('');
+  const [author, setAuthor] = useState('');
   const [job, setJob] = useState('');
-
+  const [errorName, setErrorName] = useState (''); 
+  const [errorSlogan, setErrorSlogan] = useState (''); 
+  const [errorTech, setErrorTech] = useState (''); 
+  const [errorDesc, setErrorDesc] = useState (''); 
+  const [errorAuthor, setErrorAuthor] = useState (''); 
+  const [errorJob, setErrorJob] = useState (''); 
+  
   const handleInput = (ev) => {
     const inputId = ev.target.id;
     console.log(inputId);
@@ -24,14 +30,44 @@ function App() {
       setTechnologies(ev.target.value);
     } else if (inputId === 'desc') {
       setDesc(ev.target.value);
-    } else if (inputId === 'autor') {
-      setAutor(ev.target.value);
+    } else if (inputId === 'author') {
+      setAuthor(ev.target.value);
     } else if (inputId === 'job') {
       setJob(ev.target.value);
     }
   };
 
   const handleClickCreateCard = () => {
+    if (name === '') {
+      setErrorName('Necesitamos saber el nombre de tu proyecto');
+    } else {
+      setErrorName('');
+    }
+    if (slogan === '') {
+      setErrorSlogan('Déjanos saber tu original slogan');
+    }else {
+      setErrorSlogan('');
+    }
+    if (technologies === '') {
+      setErrorTech('Cuéntanos que tecnologías manejas');
+    } else {
+      setErrorTech('');
+    }
+    if (desc === '') {
+      setErrorDesc('Queremos conocer un poco más de tu proyecto');
+    } else {
+      setErrorDesc('');
+    }
+    if (author === '') {
+      setErrorAuthor('¿Cuál es tu nombre?');
+    } else {
+      setErrorAuthor('');
+    }
+    if (job === '') {
+      setErrorJob('¿A qué te dedicas?');
+    }else {
+      setErrorJob('');
+    }
     console.log('he hecho click');
   };
 
@@ -67,7 +103,7 @@ function App() {
             <section className="info-autor">
               <img className="image" src={user} alt="" />
               <p className="job">{job || 'Full Stack Developer'}</p>
-              <p className="name">{autor || 'Emmelie Björklund'}</p>
+              <p className="name">{author || 'Emmelie Björklund'}</p>
             </section>
           </section>
         </section>
@@ -84,51 +120,67 @@ function App() {
             <input
               className="input"
               type="text"
-              placeholder="Nombre del proyecto"
+              placeholder="Nombre del proyecto *"
               name="name"
               id="name"
+              value={name}
               onChange={handleInput}
+              required
             />
+            <p className='error'>{errorName}</p>
             <input
               className="input"
               type="text"
               name="slogan"
               id="slogan"
-              placeholder="Slogan"
+              value={slogan}
+              placeholder="Slogan *"
               onChange={handleInput}
+              required
             />
+            <p className='error'>{errorSlogan}</p>
             <input
               className="input"
               type="text"
               name="repo"
               id="repo"
-              placeholder="Repo"
+              placeholder="Repo *"
               onChange={handleInput}
+              required
             />
+            <p className='error'></p>
             <input
               className="input"
               type="text"
-              placeholder="Demo"
+              placeholder="Demo *"
               name="demo"
               id="demo"
               onChange={handleInput}
+              required
             />
+            <p className='error'></p>
             <input
               className="input"
               type="text"
-              placeholder="Tecnologías"
+              placeholder="Tecnologías *"
               name="technologies"
               id="technologies"
+              value={technologies}
               onChange={handleInput}
+              required
             />
+            <p className='error'>{errorTech}</p>
             <textarea
               className="textarea"
               type="text"
-              placeholder="Descripción"
+              placeholder="Descripción *"
               name="desc"
               id="desc"
+              value={desc}
               onChange={handleInput}
+              required
             ></textarea>
+            <p className='error'>{errorDesc}</p>
           </fieldset>
 
           <section className="ask-info">
@@ -140,19 +192,25 @@ function App() {
             <input
               className="input"
               type="text"
-              placeholder="Nombre"
-              name="autor"
-              id="autor"
+              placeholder="Nombre *"
+              name="author"
+              id="author"
+              value={author}
               onChange={handleInput}
+              required
             />
+            <p className='error'>{errorAuthor}</p>
             <input
               className="input"
               type="text"
-              placeholder="Trabajo"
+              placeholder="Trabajo *"
               name="job"
               id="job"
+              value={job}
               onChange={handleInput}
+              required
             />
+            <p className='error'>{errorJob}</p>
           </fieldset>
 
           <section className="buttons-img">
