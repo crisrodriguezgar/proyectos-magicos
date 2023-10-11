@@ -6,69 +6,58 @@ import { useState } from 'react';
 
 function App() {
   // funciones, variables, handles...
-  const [name, setName] = useState('');
-  const [slogan, setSlogan] = useState('');
-  const [technologies, setTechnologies] = useState('');
-  const [desc, setDesc] = useState('');
-  const [author, setAuthor] = useState('');
-  const [job, setJob] = useState('');
+  const [data, setData] = useState (
+  {name:'',
+   slogan:'',
+   technologies: '',
+   desc: '',
+   autor: '',
+   job: '',
+     }); 
   const [errorName, setErrorName] = useState (''); 
   const [errorSlogan, setErrorSlogan] = useState (''); 
   const [errorTech, setErrorTech] = useState (''); 
   const [errorDesc, setErrorDesc] = useState (''); 
-  const [errorAuthor, setErrorAuthor] = useState (''); 
+  const [errorautor, setErrorautor] = useState (''); 
   const [errorJob, setErrorJob] = useState (''); 
   
   const handleInput = (ev) => {
     const inputId = ev.target.id;
-    console.log(inputId);
-    if (inputId === 'name') {
-      setName(ev.target.value);
-    } else if (inputId === 'slogan') {
-      setSlogan(ev.target.value);
-    } else if (inputId === 'technologies') {
-      setTechnologies(ev.target.value);
-    } else if (inputId === 'desc') {
-      setDesc(ev.target.value);
-    } else if (inputId === 'author') {
-      setAuthor(ev.target.value);
-    } else if (inputId === 'job') {
-      setJob(ev.target.value);
-    }
+    const inputValue = ev.target.value;
+    setData ({...data, [inputId] : inputValue})
   };
 
   const handleClickCreateCard = () => {
-    if (name === '') {
+    if (data.name === '') {
       setErrorName('Necesitamos saber el nombre de tu proyecto');
     } else {
       setErrorName('');
     }
-    if (slogan === '') {
+    if (data.slogan === '') {
       setErrorSlogan('Déjanos saber tu original slogan');
     }else {
       setErrorSlogan('');
     }
-    if (technologies === '') {
+    if (data.technologies === '') {
       setErrorTech('Cuéntanos que tecnologías manejas');
     } else {
       setErrorTech('');
     }
-    if (desc === '') {
+    if (data.desc === '') {
       setErrorDesc('Queremos conocer un poco más de tu proyecto');
     } else {
       setErrorDesc('');
     }
-    if (author === '') {
-      setErrorAuthor('¿Cuál es tu nombre?');
+    if (data.autor === '') {
+      setErrorautor('¿Cuál es tu nombre?');
     } else {
-      setErrorAuthor('');
+      setErrorautor('');
     }
-    if (job === '') {
+    if (data.job === '') {
       setErrorJob('¿A qué te dedicas?');
     }else {
       setErrorJob('');
     }
-    console.log('he hecho click');
   };
 
   //html
@@ -86,24 +75,24 @@ function App() {
               <p className="infoProject_subtitle">Personal Project Card</p>
               <hr className="infoProject_line" />
 
-              <h2 className="infoProject_title">{name || 'Elegant Workspace'}</h2>
-              <p className="infoProject_slogan">{slogan || 'Diseños Exclusivos'}</p>
+              <h2 className="infoProject_title">{data.name || 'Elegant Workspace'}</h2>
+              <p className="infoProject_slogan">{data.slogan || 'Diseños Exclusivos'}</p>
               <p className="infoProject_desc">
-                {desc ||
+                {data.desc ||
                   `Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                 Libero, delectus? Voluptates at hic aliquam porro ad suscipit
                 harum laboriosam saepe earum doloribus aperiam, ullam culpa
                 accusantium placeat odit corrupti ipsum!`}
               </p>
               <section className="technologies">
-                <p className="technologies_text">{technologies || 'React JS, MongoDB'}</p>
+                <p className="technologies_text">{data.technologies || 'React JS, MongoDB'}</p>
               </section>
             </section>
 
             <section className="infoAutor">
               <img className="infoAutor_image" src={user} alt="" />
-              <p className="infoAutor_job">{job || 'Full Stack Developer'}</p>
-              <p className="infoAutor_name">{author || 'Emmelie Björklund'}</p>
+              <p className="infoAutor_job">{data.job || 'Full Stack Developer'}</p>
+              <p className="infoAutor_name">{data.autor || 'Emmelie Björklund'}</p>
             </section>
           </section>
         </section>
@@ -123,7 +112,7 @@ function App() {
               placeholder="Nombre del proyecto *"
               name="name"
               id="name"
-              value={name}
+              value={data.name}
               onChange={handleInput}
               required
             />
@@ -133,7 +122,7 @@ function App() {
               type="text"
               name="slogan"
               id="slogan"
-              value={slogan}
+              value={data.slogan}
               placeholder="Slogan *"
               onChange={handleInput}
               required
@@ -165,7 +154,7 @@ function App() {
               placeholder="Tecnologías *"
               name="technologies"
               id="technologies"
-              value={technologies}
+              value={data.technologies}
               onChange={handleInput}
               required
             />
@@ -176,7 +165,7 @@ function App() {
               placeholder="Descripción *"
               name="desc"
               id="desc"
-              value={desc}
+              value={data.desc}
               onChange={handleInput}
               required
             ></textarea>
@@ -193,20 +182,20 @@ function App() {
               className="form_project-input"
               type="text"
               placeholder="Nombre *"
-              name="author"
-              id="author"
-              value={author}
+              name="autor"
+              id="autor"
+              value={data.autor}
               onChange={handleInput}
               required
             />
-            <p className='error'>{errorAuthor}</p>
+            <p className='error'>{errorautor}</p>
             <input
               className="form_project-input"
               type="text"
               placeholder="Trabajo *"
               name="job"
               id="job"
-              value={job}
+              value={data.job}
               onChange={handleInput}
               required
             />
