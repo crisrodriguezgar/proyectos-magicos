@@ -1,14 +1,16 @@
 .container {
-  background-color: #302c42;
-  height: 100vh;
-  padding: 20px;
+  background-color: $dark;
+  padding: 2.5rem;
 }
 .header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-
+  @include dFlex(row, space-between, center);
+  &_icon {
+    @include size(3.8rem, 3.1rem);
+  }
   &_text {
-    color: white;
+    @include font($fontPoppins, 1.4rem, $white-50, 300);
+  }
+  &_logo {
+    @include size(12.3rem, 4.6rem);
   }
 }

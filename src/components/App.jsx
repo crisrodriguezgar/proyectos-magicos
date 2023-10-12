@@ -1,30 +1,32 @@
 //imports dependencias, imagenes, de otros componentes, de estilos
 import cover from '../assets/cover.jpeg';
+import logo from '../assets/logo-adalab.png';
 import user from '../assets/user.jpeg';
+import icon from '../assets/laptop.svg';
 import '../styles/App.scss';
 import { useState } from 'react';
 
 function App() {
   // funciones, variables, handles...
-  const [data, setData] = useState (
-  {name:'',
-   slogan:'',
-   technologies: '',
-   desc: '',
-   autor: '',
-   job: '',
-     }); 
-  const [errorName, setErrorName] = useState (''); 
-  const [errorSlogan, setErrorSlogan] = useState (''); 
-  const [errorTech, setErrorTech] = useState (''); 
-  const [errorDesc, setErrorDesc] = useState (''); 
-  const [errorautor, setErrorautor] = useState (''); 
-  const [errorJob, setErrorJob] = useState (''); 
-  
+  const [data, setData] = useState({
+    name: '',
+    slogan: '',
+    technologies: '',
+    desc: '',
+    autor: '',
+    job: '',
+  });
+  const [errorName, setErrorName] = useState('');
+  const [errorSlogan, setErrorSlogan] = useState('');
+  const [errorTech, setErrorTech] = useState('');
+  const [errorDesc, setErrorDesc] = useState('');
+  const [errorautor, setErrorautor] = useState('');
+  const [errorJob, setErrorJob] = useState('');
+
   const handleInput = (ev) => {
     const inputId = ev.target.id;
     const inputValue = ev.target.value;
-    setData ({...data, [inputId] : inputValue})
+    setData({ ...data, [inputId]: inputValue });
   };
 
   const handleClickCreateCard = () => {
@@ -35,7 +37,7 @@ function App() {
     }
     if (data.slogan === '') {
       setErrorSlogan('Déjanos saber tu original slogan');
-    }else {
+    } else {
       setErrorSlogan('');
     }
     if (data.technologies === '') {
@@ -55,7 +57,7 @@ function App() {
     }
     if (data.job === '') {
       setErrorJob('¿A qué te dedicas?');
-    }else {
+    } else {
       setErrorJob('');
     }
   };
@@ -64,19 +66,36 @@ function App() {
   return (
     <div className="container">
       <header className="header">
+        <img className="header_icon" src={icon} alt="icon laptop" />
         <p className="header_text">Proyectos Molones</p>
+        <img className="header_logo" src={logo} alt="Logo Adalab" />
       </header>
       <main className="main">
+        <section className="intro">
+          <h1 className="intro_title">Proyectos Molones</h1>
+          <p className="intro_text">
+            Escaparate en línea para recoger ideas a través de la tecnología.
+          </p>
+          <button className="intro_btn">Ver Proyectos</button>
+        </section>
         <section className="preview">
           <img className="preview_image" src={cover} alt="" />
 
           <section className="preview_autor">
             <section className="infoProject">
-              <p className="infoProject_subtitle">Personal Project Card</p>
-              <hr className="infoProject_line" />
+              <div className="infoProject_container">
+                <p className="infoProject_container-subtitle">
+                  Personal Project Card
+                </p>
+                <hr className="infoProject_container-line" />
+              </div>
 
-              <h2 className="infoProject_title">{data.name || 'Elegant Workspace'}</h2>
-              <p className="infoProject_slogan">{data.slogan || 'Diseños Exclusivos'}</p>
+              <h2 className="infoProject_title">
+                {data.name || 'Elegant Workspace'}
+              </h2>
+              <p className="infoProject_slogan">
+                {data.slogan || 'Diseños Exclusivos'}
+              </p>
               <p className="infoProject_desc">
                 {data.desc ||
                   `Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -85,14 +104,20 @@ function App() {
                 accusantium placeat odit corrupti ipsum!`}
               </p>
               <section className="technologies">
-                <p className="technologies_text">{data.technologies || 'React JS, MongoDB'}</p>
+                <p className="technologies_text">
+                  {data.technologies || 'React JS, MongoDB'}
+                </p>
               </section>
             </section>
 
             <section className="infoAutor">
               <img className="infoAutor_image" src={user} alt="" />
-              <p className="infoAutor_job">{data.job || 'Full Stack Developer'}</p>
-              <p className="infoAutor_name">{data.autor || 'Emmelie Björklund'}</p>
+              <p className="infoAutor_job">
+                {data.job || 'Full Stack Developer'}
+              </p>
+              <p className="infoAutor_name">
+                {data.autor || 'Emmelie Björklund'}
+              </p>
             </section>
           </section>
         </section>
@@ -116,7 +141,7 @@ function App() {
               onChange={handleInput}
               required
             />
-            <p className='error'>{errorName}</p>
+            <p className="error">{errorName}</p>
             <input
               className="form_project-input"
               type="text"
@@ -127,7 +152,7 @@ function App() {
               onChange={handleInput}
               required
             />
-            <p className='error'>{errorSlogan}</p>
+            <p className="error">{errorSlogan}</p>
             <input
               className="form_project-input"
               type="text"
@@ -137,7 +162,7 @@ function App() {
               onChange={handleInput}
               required
             />
-            <p className='error'></p>
+            <p className="error"></p>
             <input
               className="form_project-input"
               type="text"
@@ -147,7 +172,7 @@ function App() {
               onChange={handleInput}
               required
             />
-            <p className='error'></p>
+            <p className="error"></p>
             <input
               className="form_project-input"
               type="text"
@@ -158,7 +183,7 @@ function App() {
               onChange={handleInput}
               required
             />
-            <p className='error'>{errorTech}</p>
+            <p className="error">{errorTech}</p>
             <textarea
               className="form_project-textarea"
               type="text"
@@ -169,7 +194,7 @@ function App() {
               onChange={handleInput}
               required
             ></textarea>
-            <p className='error'>{errorDesc}</p>
+            <p className="error">{errorDesc}</p>
           </fieldset>
 
           <section className="form_askInfo">
@@ -188,7 +213,7 @@ function App() {
               onChange={handleInput}
               required
             />
-            <p className='error'>{errorautor}</p>
+            <p className="error">{errorautor}</p>
             <input
               className="form_project-input"
               type="text"
@@ -199,7 +224,7 @@ function App() {
               onChange={handleInput}
               required
             />
-            <p className='error'>{errorJob}</p>
+            <p className="error">{errorJob}</p>
           </fieldset>
 
           <section className="form_btnImg">
@@ -207,7 +232,10 @@ function App() {
             <button className="form_btnImg-btn">Subir foto de autora</button>
           </section>
           <section className="form_btnImg">
-            <button className="form_btnImg-large" onClick={handleClickCreateCard}>
+            <button
+              className="form_btnImg-large"
+              onClick={handleClickCreateCard}
+            >
               Crear Tarjeta
             </button>
           </section>

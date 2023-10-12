@@ -1,58 +1,50 @@
-.main {
-  display: flex;
-  padding-top: 50px;
-  height: 80vh;
-}
-
 .preview {
-  width: 60%;
-  padding: 20px;
-
+  margin-top: 3rem;
   &_image {
     object-fit: cover;
-    width: 100%;
-    height: 80%;
+    @include size(100%, 30.7rem);
   }
 
   &_autor {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    border: none;
+    @include dFlex(row-reverse, none, center);
     background-color: white;
-    color: #3e3e3e;
     width: 90%;
-    height: 50%;
-    transform: translateY(-100px);
     margin: auto;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: row-reverse;
-    gap: 40px;
-    padding: 30px;
-    overflow-y: scroll;
+    border-radius: 2rem;
+    transform: translateY(-50px);
   }
 }
 
 .infoProject {
   width: 60%;
+  &_container {
+    &-subtitle {
+      @include font($fontPoppins, 0.8rem, $dark, 300);
+      text-align: center;
+      position: relative;
+      display: inline-block;
 
-  &_subtitle {
-    font-size: 14px;
-    text-align: center;
-  }
+      background-color: white;
+      z-index: 1;
+    }
 
-  &_line {
-    width: 100%;
-    border: 0;
-    height: 1px;
+    &-line {
+      width: 100%;
+      border: 0;
+      height: 2px;
+      position: absolute;
+      top: 30%;
+      left: 10%;
+      transform: translateY(-0.8rem);
 
-    background-image: linear-gradient(
-      to right,
-      rgba(255, 255, 255, 0),
-      rgba(1, 1, 1, 0.75),
-      rgba(255, 255, 255, 0)
-    );
+      background-image: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0),
+        rgba(1, 1, 1, 0.75),
+        rgba(255, 255, 255, 0)
+      );
+    }
+
     &_title {
       font-size: 20px;
       color: black;
