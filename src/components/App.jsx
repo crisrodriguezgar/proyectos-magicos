@@ -84,10 +84,11 @@ function App() {
           <section className="preview_autor">
             <section className="infoProject">
               <div className="infoProject_container">
+              <hr className="infoProject_container-line1" />
                 <p className="infoProject_container-subtitle">
                   Personal Project Card
                 </p>
-                {/* <hr className="infoProject_container-line" /> */}
+                <hr className="infoProject_container-line2" />
               </div>
 
               <h2 className="infoProject_title">

@@ -18,31 +18,26 @@
 
   .infoProject {
     width: 60%;
-    @include padding (1rem, 2rem);
+    @include padding(1rem, 2rem);
 
     &_container {
+      display: flex;
+      align-items: center;
+      &-line1 {
+        color: $dark;
+        @include size(3.4rem, 0.2rem);
+        border: 0;
+        background-image: linear-gradient(to right, #ffffff00, #010101bf);
+      }
       &-subtitle {
         @include font($fontPoppins, 0.8rem, $dark, 300);
-        text-align: center;
-        position: relative;
-        display: inline-block;
-        background-color: white;
-        z-index: 1;
       }
 
-      &-line {
-        @include size (100%, 0.2rem);
+      &-line2 {
+        color: $dark;
+        @include size(3.4rem, 0.2rem);
         border: 0;
-        position: absolute;
-        top: 30%;
-        left: 10%;
-        transform: translateY(-0.8rem);
-        background-image: linear-gradient(
-          to right,
-          rgba(255, 255, 255, 0),
-          rgba(1, 1, 1, 0.75),
-          rgba(255, 255, 255, 0)
-        );
+        background-image: linear-gradient(to right, #010101bf, #ffffff00);
       }
     }
 
