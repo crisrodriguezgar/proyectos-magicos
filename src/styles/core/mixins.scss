@@ -16,3 +16,10 @@
   justify-content: $justify;
   align-items: $align;
 }
+
+@mixin fieldset (){
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}

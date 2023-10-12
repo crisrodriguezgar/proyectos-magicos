@@ -1,7 +1,7 @@
 //imports dependencias, imagenes, de otros componentes, de estilos
 import cover from '../assets/cover.jpeg';
 import logo from '../assets/logo-adalab.png';
-import user from '../assets/user.jpeg';
+import avatar from '../assets/avatar.png';
 import icon from '../assets/laptop.svg';
 import '../styles/App.scss';
 import { useState } from 'react';
@@ -87,7 +87,7 @@ function App() {
                 <p className="infoProject_container-subtitle">
                   Personal Project Card
                 </p>
-                <hr className="infoProject_container-line" />
+                {/* <hr className="infoProject_container-line" /> */}
               </div>
 
               <h2 className="infoProject_title">
@@ -105,13 +105,13 @@ function App() {
               </p>
               <section className="technologies">
                 <p className="technologies_text">
-                  {data.technologies || 'React JS, MongoDB'}
+                  {data.technologies || 'React JS - HTML - CSS'}
                 </p>
               </section>
             </section>
 
             <section className="infoAutor">
-              <img className="infoAutor_image" src={user} alt="" />
+              <img className="infoAutor_image" src={avatar} alt="" />
               <p className="infoAutor_job">
                 {data.job || 'Full Stack Developer'}
               </p>
@@ -228,6 +228,7 @@ function App() {
           </fieldset>
 
           <section className="form_btnImg">
+            
             <button className="form_btnImg-btn">Subir foto de proyecto</button>
             <button className="form_btnImg-btn">Subir foto de autora</button>
           </section>
@@ -240,7 +241,7 @@ function App() {
             </button>
           </section>
 
-          <section className="form_card">
+          <section className="form_card hidden">
             <span className=""> La tarjeta ha sido creada: </span>
             <a href="" className="" target="_blank" rel="noreferrer">
               {' '}

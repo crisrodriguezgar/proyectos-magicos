@@ -1,21 +1,25 @@
 .form {
-  background-color: #302c42;
-  width: 40%;
+  background-image: radial-gradient(circle at 50% 50%, $dusk, #211e2e 92%);
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25); 
+  border: solid 1px rgba(0, 0, 0, 0);
+  padding-block: 1.8rem;
+  padding-inline: 2.5rem;
+  text-align: center;
   &_title {
-    color: #ffffff;
-    text-align: center;
+    @include font ($fontMonserrat, 3rem, $white,bold);
   }
   &_askInfo {
-    padding: 20px;
-    text-align: center;
-    color: white;
+    padding: 1.8rem;
+    
     &-subtitle {
+      @include font ($fontMonserrat, 1.5rem, $white,300);
       padding-bottom: 10px;
     }
     &-line {
-      width: 100%;
+      width: 40%;
       border: 0;
       height: 1px;
+      margin:auto;
       background-image: linear-gradient(
         to right,
         rgba(255, 255, 255, 0),
@@ -25,25 +29,22 @@
     }
   }
   &_project {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    border: none;
+    @include fieldset;
     &-input,
     &-textarea {
-      background-color: #302c42;
-      border-color: white;
-      border-radius: 40px;
-      height: 42.72px;
-      color: #ffffff;
-      padding-left: 15px;
-      padding-top: 5px;
+      @include font ($fontMonserrat, 1.5rem, $white,300);
+      background-color: transparent;
+      border-radius: 4rem;
+      border: solid 0.2rem $white;
+      padding-inline: 1.5rem;
+      padding-block:1rem;
     &::placeholder {
-        color: #ffffff;
+        color: $white-80;
       }
     }
     &-textarea {
-      height: 110px;
+      height: 8rem;
+      border-radius: 2.5rem;
     }
   }
 
@@ -51,19 +52,23 @@
     text-align: center;
     &-btn,
     &-large {
-      width: 160px;
-      margin-top: 10px;
-      color: white;
+      @include font ($fontMonserrat, 1rem, $white,bold);
+      padding-inline: 1.2rem;
+      padding-block: 1rem;
       text-align: center;
       border: none;
-
-      height: 43px;
       background: linear-gradient(90deg, #8176af -1.57%, #c0b7e8 98.43%);
       border-radius: 40px;
+      margin-bottom: 1.8rem;
     }
     &-large {
-      width: 200px;
+      padding-inline: 4rem;
+      margin-bottom: 5rem;
       border: solid 2px white;
+    }
+    &-btn{
+      display: flex;
+      gap: 1rem;
     }
   }
 
@@ -72,6 +77,10 @@
     text-align: center;
     padding: 20px;
   }
+}
+.autor{
+  @include fieldset;
+  margin-bottom: 4rem;
 }
 
 .btn-color {
