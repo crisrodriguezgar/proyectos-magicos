@@ -4,7 +4,7 @@ import logo from '../assets/logo-adalab.png';
 import avatar from '../assets/avatar.png';
 import icon from '../assets/laptop.svg';
 import '../styles/App.scss';
-import { useState } from 'react';
+import {useState} from 'react';
 
 function App() {
   // funciones, variables, handles...
@@ -26,7 +26,7 @@ function App() {
   const handleInput = (ev) => {
     const inputId = ev.target.id;
     const inputValue = ev.target.value;
-    setData({ ...data, [inputId]: inputValue });
+    setData({...data, [inputId]: inputValue});
   };
 
   const handleClickCreateCard = () => {
@@ -98,10 +98,7 @@ function App() {
               </p>
               <p className="infoProject_desc">
                 {data.desc ||
-                  `Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Libero, delectus? Voluptates at hic aliquam porro ad suscipit
-                harum laboriosam saepe earum doloribus aperiam, ullam culpa
-                accusantium placeat odit corrupti ipsum!`}
+                  `Gestión de proyectos en línea, diseñado para simplificar y agilizar tu trabajo como programadora. Con solo crear una tarjeta para cada proyecto, podrás organizarlos de manera eficiente. ¡Optimiza tu productividad y alcanza tus metas de manera efectiva con nosotras!`}
               </p>
               <section className="technologies">
                 <p className="technologies_text">
@@ -198,11 +195,11 @@ function App() {
           </fieldset>
 
           <section className="form_askInfo">
-            <p className="form_askInfo-subtitle">Cuéntanos sobre la autora</p>
-            <hr className="form_askInfo-line" />
+            <p className="form_askInfo-autor">Cuéntanos sobre la autora</p>
+            <hr className="form_askInfo-line"/>
           </section>
 
-          <fieldset className="autor">
+          <fieldset className="form_project">
             <input
               className="form_project-input"
               type="text"
@@ -227,18 +224,23 @@ function App() {
             <p className="error">{errorJob}</p>
           </fieldset>
 
-          <section className="form_btnImg">
-            
-            <button className="form_btnImg-btn">Subir foto de proyecto</button>
-            <button className="form_btnImg-btn">Subir foto de autora</button>
-          </section>
-          <section className="form_btnImg">
-            <button
-              className="form_btnImg-large"
-              onClick={handleClickCreateCard}
-            >
-              Crear Tarjeta
-            </button>
+          <section className="form_btn">
+            <div>
+              <button className="form_btn-upload">
+                Subir foto del proyecto
+              </button>
+              <button className="form_btn-upload">
+                Subir foto de la autora
+              </button>
+            </div>
+            <div>
+              <button
+                className="form_btn-create"
+                onClick={handleClickCreateCard}
+              >
+                Crear Tarjeta
+              </button>
+            </div>
           </section>
 
           <section className="form_card hidden">
@@ -249,6 +251,9 @@ function App() {
           </section>
         </section>
       </main>
+      <footer className="footer">
+        <img className="footer_img" src={logo} alt="" />
+      </footer>
     </div>
   );
 }

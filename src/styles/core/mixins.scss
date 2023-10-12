@@ -23,3 +23,14 @@
   flex-direction: column;
   gap: 0.8rem;
 }
+
+@mixin padding ($inline, $block){
+  padding-inline: $inline;
+  padding-block: $block;
+}
+
+@mixin btn ($border, $radius, $background){
+  border: $border;
+  border-radius: $radius;
+  background: $background;
+}
