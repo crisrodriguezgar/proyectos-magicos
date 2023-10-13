@@ -2,19 +2,25 @@
 import cover from '../assets/cover.jpeg';
 import logo from '../assets/logo-adalab.png';
 import avatar from '../assets/avatar.png';
-import icon from '../assets/laptop.svg';
 import '../styles/App.scss';
-import {useState} from 'react';
+import callToApi from '../services/api';
+import { useEffect, useState } from 'react';
 
 function App() {
   // funciones, variables, handles...
   const [data, setData] = useState({
     name: '',
-    slogan: '',
+    slogan: ' ',
     technologies: '',
+    repo: '',
+    demo: '',
     desc: '',
     autor: '',
     job: '',
+    photo:
+      'https://images.pexels.com/photos/18595423/pexels-photo-18595423/free-photo-of-comida-relajacion-apple-oscuro.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load',
+    image:
+      'https://images.pexels.com/photos/18250682/pexels-photo-18250682/free-photo-of-estudio-portarit.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
   });
   const [errorName, setErrorName] = useState('');
   const [errorSlogan, setErrorSlogan] = useState('');
@@ -22,11 +28,22 @@ function App() {
   const [errorDesc, setErrorDesc] = useState('');
   const [errorautor, setErrorautor] = useState('');
   const [errorJob, setErrorJob] = useState('');
+  const [responseUrl, setResponseUrl] = useState('');
+
+  useEffect(() => {
+    // Dentro de useEffect llamamos a la API
+    callToApi(data).then((response) => {
+      // Cuando la API responde guardamos los datos en el estado para que se vuelva a renderizar el componente
+      setResponseUrl(response);
+      console.log(response);
+    });
+    // Aquí ponemos un array vacío porque solo queremos que se llame a la API la primera vez
+  }, []);
 
   const handleInput = (ev) => {
     const inputId = ev.target.id;
     const inputValue = ev.target.value;
-    setData({...data, [inputId]: inputValue});
+    setData({ ...data, [inputId]: inputValue });
   };
 
   const handleClickCreateCard = () => {
@@ -66,7 +83,7 @@ function App() {
   return (
     <div className="container">
       <header className="header">
-        <div className='header_left'>
+        <div className="header_left">
           <i className="fa-solid fa-laptop-code fa-2xl header_left-icon"></i>
           <p className="header_left-text">Proyectos Molones</p>
         </div>
@@ -107,6 +124,12 @@ function App() {
                 <p className="technologies_text">
                   {data.technologies || 'React JS - HTML - CSS'}
                 </p>
+                <button>
+                  <i className="fa-solid fa-globe"></i>
+                </button>
+                <button>
+                  <i className="fa-brands fa-github"></i>
+                </button>
               </section>
             </section>
 
@@ -247,7 +270,7 @@ function App() {
           </section>
 
           <section className="form_card hidden">
-            <span className=""> La tarjeta ha sido creada: </span>
+            <span className=""> La tarjeta ha sido creada: {responseUrl}</span>
             <a href="" className="" target="_blank" rel="noreferrer">
               {' '}
             </a>
