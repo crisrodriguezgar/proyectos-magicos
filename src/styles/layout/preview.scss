@@ -30,7 +30,8 @@
         background-image: linear-gradient(to right, #ffffff00, #010101bf);
       }
       &-subtitle {
-        @include font($fontPoppins, 0.8rem, $dark, 300);
+        text-align: center;
+        @include font($fontPoppins, 0.7rem, $dark, 300);
       }
 
       &-line2 {

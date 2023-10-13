@@ -4,12 +4,18 @@
 }
 .header {
   @include dFlex(row, space-between, center);
-  &_icon {
-    @include size(3.8rem, 3.1rem);
+  &_left{
+    display: flex;
+    align-items: center;
+    gap:1rem;
+  &-icon {
+    font-size: 3rem;
+    color: $white;
   }
-  &_text {
+  &-text {
     @include font($fontPoppins, 1.4rem, $white-50, 300);
   }
+}
   &_logo {
     @include size(12.3rem, 4.6rem);
   }

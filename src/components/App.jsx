@@ -66,8 +66,10 @@ function App() {
   return (
     <div className="container">
       <header className="header">
-        <img className="header_icon" src={icon} alt="icon laptop" />
-        <p className="header_text">Proyectos Molones</p>
+        <div className='header_left'>
+          <i className="fa-solid fa-laptop-code fa-2xl header_left-icon"></i>
+          <p className="header_left-text">Proyectos Molones</p>
+        </div>
         <img className="header_logo" src={logo} alt="Logo Adalab" />
       </header>
       <main className="main">
@@ -84,7 +86,7 @@ function App() {
           <section className="preview_autor">
             <section className="infoProject">
               <div className="infoProject_container">
-              <hr className="infoProject_container-line1" />
+                <hr className="infoProject_container-line1" />
                 <p className="infoProject_container-subtitle">
                   Personal Project Card
                 </p>
@@ -197,7 +199,7 @@ function App() {
 
           <section className="form_askInfo">
             <p className="form_askInfo-autor">Cuéntanos sobre la autora</p>
-            <hr className="form_askInfo-line"/>
+            <hr className="form_askInfo-line" />
           </section>
 
           <fieldset className="form_project">
