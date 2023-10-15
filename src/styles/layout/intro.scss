@@ -2,25 +2,45 @@
   display: flex;
   flex-direction: column;
   padding-top: 3rem;
+  @media (min-width: 768px){
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 15% 85%;
+  }
 }
 .intro {
   text-align: center;
   &_title {
     @include font($fontMonserrat, 2rem, $white, bold);
+    @media (min-width: 768px){
+      font-size: 4rem; 
+    }
   }
   &_text {
     margin-top: 0.8rem;
     @include font($fontMonserrat, 1.2rem, $white-80, 300);
     padding-inline: 4rem;
+    @media (min-width: 768px){
+      font-size: 1.8rem; 
+    }
   }
   &_btn {
     margin-top: 1.2rem;
     @include font($fontRoboto, 1rem, $white, bold);
     text-transform: uppercase;
     background-color: $dark-lilac;
-    padding-inline: 2rem;
-    padding-block: 0.5rem;
+    @include padding (2rem, 0.5rem);
     border: none;
     border-radius: 2rem;
+    cursor: pointer; 
+    @media (min-width: 768px){
+      font-size: 1.5rem; 
+      margin-top: 1.4rem;
+      @include padding (2.2rem, 0.8rem);
+    }
+  }
+  @media (min-width: 768px){
+    grid-column: 1/3;
+    grid-row: 1/2;
   }
 }

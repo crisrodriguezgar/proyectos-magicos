@@ -4,8 +4,15 @@
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   border: solid 1px rgba(0, 0, 0, 0);
   text-align: center;
+  @media (min-width: 768px){
+    grid-column: 2/3;
+    grid-row: 2/3;
+  }
   &_title {
     @include font($fontMonserrat, 3rem, $white, bold);
+    @media (min-width: 768px){
+      font-size: 4rem; 
+    }
   }
   &_askInfo {
     padding: 1.8rem;
@@ -13,6 +20,9 @@
     &-subtitle {
       @include font($fontMonserrat, 1.5rem, $white, 300);
       padding-bottom: 10px;
+      @media (min-width: 768px){
+        font-size: 1.8rem; 
+      }
     }
 
     &-line {
@@ -47,6 +57,10 @@
       padding-block: 1rem;
       &::placeholder {
         color: $white-80;
+        background-color: transparent;
+      }
+      @media (min-width: 768px){
+        font-size: 1.4rem; 
       }
     }
 
@@ -58,6 +72,17 @@
 
   &_btn {
     margin-top: 4rem;
+    @media (min-width: 768px){
+      margin-top: 2rem; 
+     }
+
+   &-first {
+    @media (min-width: 768px){
+      display: flex; 
+      gap: 2rem; 
+      justify-content: center;
+      align-items: center;
+     }
 
     &-upload {
       @include font($fontMonserrat, 1rem, $white, bold);
@@ -70,7 +95,15 @@
       margin-right: 0.5rem;
       margin-bottom: 1.8rem;
       width: 12rem;
+      cursor: pointer; 
+      @media (min-width: 768px){
+        font-size: 1.2rem; 
+        @include padding(2.5rem, 1rem);
+        width: 16rem;
+      }
     }
+   }
+  
 
     &-create {
       @include font($fontMonserrat, 1rem, $white, bold);
@@ -81,36 +114,37 @@
         linear-gradient(90deg, #8176af -1.57%, #c0b7e8 98.43%)
       );
       margin-bottom: 2rem;
+      cursor: pointer; 
+      @media (min-width: 768px){
+        font-size: 1.6rem; 
+        @include padding(4.5rem, 1.5rem);
+      }
     }
   }
 
   &_card {
-    color: white;
+    display: flex;
+    flex-direction: column;
     text-align: center;
-    padding: 20px;
+    padding: 2rem;
+    gap: 1rem; 
+
+    &-msg{
+      @include font($fontMonserrat, 1rem, $white, bold);
+    }
+
+    &-link{
+      text-decoration: none; 
+      @include font($fontMonserrat, 1rem, $warm-grey, 300);
+      cursor: pointer; 
+    }
   }
 }
 
 .hidden {
   display: none;
 }
-.footer {
-  text-align: center;
-  margin-top: 1.9rem;
-  &_img {
-    width: 12rem;
-    height: 4.6rem;
-  }
+.error {
+  @include font ($fontMonserrat, 1rem, #da5757, bold)
 }
 
-// .btn-color {
-//   border-radius: 20px;
-//   width: 85px;
-//   height: 30px;
-//   font-weight: bold;
-// }
-
-// .btn-color-dark {
-//   background-color: black;
-//   color: white;
-// }

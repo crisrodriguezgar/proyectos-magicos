@@ -4,13 +4,13 @@ import logo from '../assets/logo-adalab.png';
 import avatar from '../assets/avatar.png';
 import '../styles/App.scss';
 import callToApi from '../services/api';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 function App() {
   // funciones, variables, handles...
   const [data, setData] = useState({
     name: '',
-    slogan: ' ',
+    slogan: '',
     technologies: '',
     repo: '',
     demo: '',
@@ -18,27 +18,20 @@ function App() {
     autor: '',
     job: '',
     photo:
-      'https://images.pexels.com/photos/18595423/pexels-photo-18595423/free-photo-of-comida-relajacion-apple-oscuro.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load',
+      'https://images.pexels.com/photos/3194519/pexels-photo-3194519.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     image:
-      'https://images.pexels.com/photos/18250682/pexels-photo-18250682/free-photo-of-estudio-portarit.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      'https://images.pexels.com/photos/6393342/pexels-photo-6393342.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
   });
   const [errorName, setErrorName] = useState('');
   const [errorSlogan, setErrorSlogan] = useState('');
   const [errorTech, setErrorTech] = useState('');
   const [errorDesc, setErrorDesc] = useState('');
-  const [errorautor, setErrorautor] = useState('');
+  const [errorRepo, setErrorRepo] = useState('');
+  const [errorDemo, setErrorDemo] = useState('');
+  const [errorAutor, setErrorAutor] = useState('');
   const [errorJob, setErrorJob] = useState('');
   const [responseUrl, setResponseUrl] = useState('');
-
-  useEffect(() => {
-    // Dentro de useEffect llamamos a la API
-    callToApi(data).then((response) => {
-      // Cuando la API responde guardamos los datos en el estado para que se vuelva a renderizar el componente
-      setResponseUrl(response);
-      console.log(response);
-    });
-    // Aquí ponemos un array vacío porque solo queremos que se llame a la API la primera vez
-  }, [data]);
+  const [isHidden, setIsHidden] = useState (true);
 
 
   const handleInput = (ev) => {
@@ -68,18 +61,34 @@ function App() {
     } else {
       setErrorDesc('');
     }
-    if (data.autor === '') {
-      setErrorautor('¿Cuál es tu nombre?');
+    if (data.repo === '') {
+      setErrorRepo('Incluye la url de tu repo');
     } else {
-      setErrorautor('');
+      setErrorRepo('');
+    }
+    if (data.demo === '') {
+      setErrorDemo('Por favor, añade el enlace de tu página');
+    } else {
+      setErrorDemo('');
+    }
+    if (data.autor === '') {
+      setErrorAutor('¿Cuál es tu nombre?');
+    } else {
+      setErrorAutor('');
     }
     if (data.job === '') {
       setErrorJob('¿A qué te dedicas?');
     } else {
       setErrorJob('');
     }
-  
-    
+    callToApi(data).then((response) => {
+      // Cuando la API responde guardamos los datos en el estado para que se vuelva a renderizar el componente
+      setResponseUrl(response);
+      if (response!== undefined){
+      setIsHidden (false); 
+      }
+      console.log(response);
+    });
   };
 
   //html
@@ -100,6 +109,7 @@ function App() {
           </p>
           <button className="intro_btn">Ver Proyectos</button>
         </section>
+
         <section className="preview">
           <img className="preview_image" src={cover} alt="" />
 
@@ -127,12 +137,14 @@ function App() {
                 <p className="technologies_text">
                   {data.technologies || 'React JS - HTML - CSS'}
                 </p>
-                <button>
-                  <i className="fa-solid fa-globe"></i>
-                </button>
-                <button>
-                  <i className="fa-brands fa-github"></i>
-                </button>
+                <a href={data.demo} target="_blank" rel="noreferrer">
+                  <button className='technologies_icon'><i className="fa-solid fa-globe technologies_icon-img"></i></button>
+                </a>
+                <a href={data.repo} target="_blank" rel="noreferrer">
+                <button className='technologies_icon'>
+                  <i className="fa-brands fa-github technologies_icon-img"></i>
+                  </button>
+                </a>
               </section>
             </section>
 
@@ -184,21 +196,23 @@ function App() {
               type="text"
               name="repo"
               id="repo"
+              value={data.repo}
               placeholder="Repo *"
               onChange={handleInput}
               required
             />
-            <p className="error"></p>
+            <p className="error">{errorRepo}</p>
             <input
               className="form_project-input"
               type="text"
               placeholder="Demo *"
               name="demo"
               id="demo"
+              value={data.demo}
               onChange={handleInput}
               required
             />
-            <p className="error"></p>
+            <p className="error">{errorDemo}</p>
             <input
               className="form_project-input"
               type="text"
@@ -211,9 +225,10 @@ function App() {
             />
             <p className="error">{errorTech}</p>
             <textarea
+              maxLength="300"
               className="form_project-textarea"
               type="text"
-              placeholder="Descripción *"
+              placeholder="Descripción * (Máx. 300 caracteres)"
               name="desc"
               id="desc"
               value={data.desc}
@@ -239,7 +254,7 @@ function App() {
               onChange={handleInput}
               required
             />
-            <p className="error">{errorautor}</p>
+            <p className="error">{errorAutor}</p>
             <input
               className="form_project-input"
               type="text"
@@ -254,11 +269,11 @@ function App() {
           </fieldset>
 
           <section className="form_btn">
-            <div>
-              <button className="form_btn-upload">
+            <div className='form_btn-first'>
+              <button className="form_btn-first-upload">
                 Subir foto del proyecto
               </button>
-              <button className="form_btn-upload">
+              <button className="form_btn-first-upload">
                 Subir foto de la autora
               </button>
             </div>
@@ -272,9 +287,9 @@ function App() {
             </div>
           </section>
 
-          <section className="form_card">
-            <span className=""> La tarjeta ha sido creada:</span>
-            <a href={responseUrl} className="" target="_blank" rel="noreferrer">
+          <section className={`form_card ${isHidden ? 'hidden' : ''}`}>
+            <span className="form_card-msg"> La tarjeta ha sido creada:</span>
+            <a href={responseUrl} className="form_card-link" target="_blank" rel="noreferrer">
               {responseUrl}
             </a>
           </section>
