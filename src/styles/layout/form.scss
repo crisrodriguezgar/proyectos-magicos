@@ -131,12 +131,18 @@
 
     &-msg{
       @include font($fontMonserrat, 1rem, $white, bold);
+      @media (min-width: 768px){
+        font-size: 1.6rem; 
+      }
     }
 
     &-link{
       text-decoration: none; 
-      @include font($fontMonserrat, 1rem, $warm-grey, 300);
+      @include font($fontMonserrat, 1rem, aqua, 300);
       cursor: pointer; 
+      @media (min-width: 768px){
+        font-size: 1.6rem; 
+      }
     }
   }
 }
@@ -145,6 +151,9 @@
   display: none;
 }
 .error {
-  @include font ($fontMonserrat, 1rem, #da5757, bold)
+  @include font ($fontMonserrat, 1rem, #da5757, bold); 
+  @media (min-width: 768px){
+    font-size: 1.4rem; 
+  }
 }
 
