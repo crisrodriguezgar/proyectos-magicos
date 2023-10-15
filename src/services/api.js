@@ -7,9 +7,7 @@ const callToApi = (data) => {
   })
     .then((response) => response.json())
     .then((result) => {
-      console.log(result);
       if (result.success) {
-        console.log(result);
         return result.cardURL;
       }
     });

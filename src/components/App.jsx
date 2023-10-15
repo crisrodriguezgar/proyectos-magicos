@@ -38,7 +38,8 @@ function App() {
       console.log(response);
     });
     // Aquí ponemos un array vacío porque solo queremos que se llame a la API la primera vez
-  }, []);
+  }, [data]);
+
 
   const handleInput = (ev) => {
     const inputId = ev.target.id;
@@ -77,6 +78,8 @@ function App() {
     } else {
       setErrorJob('');
     }
+  
+    
   };
 
   //html
@@ -269,10 +272,10 @@ function App() {
             </div>
           </section>
 
-          <section className="form_card hidden">
-            <span className=""> La tarjeta ha sido creada: {responseUrl}</span>
-            <a href="" className="" target="_blank" rel="noreferrer">
-              {' '}
+          <section className="form_card">
+            <span className=""> La tarjeta ha sido creada:</span>
+            <a href={responseUrl} className="" target="_blank" rel="noreferrer">
+              {responseUrl}
             </a>
           </section>
         </section>
