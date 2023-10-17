@@ -121,10 +121,7 @@
     padding: 2rem;
     gap: 1rem; 
     &-msg{
-      @include font($fontMonserrat, 1rem, $white, bold);
-      @media (min-width: 768px){
-        font-size: 1.6rem; 
-      }
+      @include font($fontMonserrat, 1rem, $white, 300);
       @media (min-width: 768px){
         font-size: 1.6rem; 
       }
@@ -134,9 +131,6 @@
       margin-bottom: 1.5rem;
       @include font($fontMonserrat, 1rem, aqua, 300);
       cursor: pointer; 
-      @media (min-width: 768px){
-        font-size: 1.6rem; 
-      }
       @media (min-width: 768px){
         font-size: 1.6rem; 
       }
@@ -151,7 +145,4 @@
   @media (min-width: 768px){
     font-size: 1.4rem; 
   }; 
-  @media (min-width: 768px){
-    font-size: 1.4rem; 
-  }
 }

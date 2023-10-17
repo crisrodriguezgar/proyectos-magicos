@@ -3,6 +3,7 @@ import '../styles/App.scss';
 import callToApi from '../services/api';
 import {useState} from 'react';
 import Project from './Project';
+import ls from '../services/localStorage';
 
 function App() {
   // funciones, variables, handles...
@@ -30,11 +31,16 @@ function App() {
   const [errorJob, setErrorJob] = useState('');
   const [responseUrl, setResponseUrl] = useState('');
   const [isHidden, setIsHidden] = useState(true);
+  
+  /*const getData = () => {
+  const localStorage = ls.get (data); 
+  setData(localStorage)};*/
 
   const handleInput = (ev) => {
     const inputId = ev.target.id;
     const inputValue = ev.target.value;
     setData({...data, [inputId]: inputValue});
+    ls.set('data', data);
   };
 
   const handleClickCreateCard = () => {
