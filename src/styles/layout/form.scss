@@ -1,3 +1,6 @@
+@import '../core/variables';
+@import '../core/mixins';
+
 .form {
   @include padding(2.5rem, 1.8rem);
   background-image: radial-gradient(circle at 50% 50%, $dusk, #211e2e 92%);
@@ -16,7 +19,6 @@
   }
   &_askInfo {
     padding: 1.8rem;
-
     &-subtitle {
       @include font($fontMonserrat, 1.5rem, $white, 300);
       padding-bottom: 10px;
@@ -24,7 +26,6 @@
         font-size: 1.8rem; 
       }
     }
-
     &-line {
       width: 40%;
       border: 0;
@@ -37,16 +38,13 @@
         rgba(255, 255, 255, 0)
       );
     }
-
     &-autor {
       @include font($fontMonserrat, 1.8rem, $white, 300);
       margin-bottom: 0.5rem;
     }
   }
-
   &_project {
     @include fieldset;
-
     &-input,
     &-textarea {
       @include font($fontMonserrat, 1rem, $white, 300);
@@ -63,19 +61,16 @@
         font-size: 1.4rem; 
       }
     }
-
     &-textarea {
       height: 8rem;
       border-radius: 2.5rem;
     }
   }
-
   &_btn {
     margin-top: 4rem;
     @media (min-width: 768px){
       margin-top: 2rem; 
      }
-
    &-first {
     @media (min-width: 768px){
       display: flex; 
@@ -83,7 +78,6 @@
       justify-content: center;
       align-items: center;
      }
-
     &-upload {
       @include font($fontMonserrat, 1rem, $white, bold);
       @include padding(1.5rem, 0.5rem);
@@ -104,7 +98,6 @@
     }
    }
   
-
     &-create {
       @include font($fontMonserrat, 1rem, $white, bold);
       @include padding(4rem, 1rem);
@@ -121,30 +114,35 @@
       }
     }
   }
-
   &_card {
     display: flex;
     flex-direction: column;
     text-align: center;
     padding: 2rem;
     gap: 1rem; 
-
     &-msg{
       @include font($fontMonserrat, 1rem, $white, bold);
+      @media (min-width: 768px){
+        font-size: 1.6rem; 
+      }
     }
-
     &-link{
-      text-decoration: none; 
-      @include font($fontMonserrat, 1rem, $warm-grey, 300);
+      text-decoration: none;
+      margin-bottom: 1.5rem;
+      @include font($fontMonserrat, 1rem, aqua, 300);
       cursor: pointer; 
+      @media (min-width: 768px){
+        font-size: 1.6rem; 
+      }
     }
   }
 }
-
 .hidden {
   display: none;
 }
 .error {
-  @include font ($fontMonserrat, 1rem, #da5757, bold)
+  @include font ($fontMonserrat, 1rem, #da5757, bold); 
+  @media (min-width: 768px){
+    font-size: 1.4rem; 
+  }
 }
-

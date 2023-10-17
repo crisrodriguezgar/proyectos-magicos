@@ -1,9 +1,10 @@
+@import '../core/mixins';
+
 .footer {
     text-align: center;
     margin-top: 1.9rem;
     &_img {
-      width: 12rem;
-      height: 4.6rem;
+      @include size (12rem, 4.6rem);
     }
   }
   
