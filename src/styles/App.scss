@@ -1,8 +1,4 @@
 @import 'core/variables';
 @import 'core/mixins';
-@import 'core/reset';
-@import 'layout/header';
-@import 'layout/intro';
-@import 'layout/preview';
-@import 'layout/form';
-@import 'layout/footer';
+@import 'core/reset'; //deberiamos pasar a main.jsx
+
