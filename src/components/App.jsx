@@ -1,13 +1,13 @@
 //imports dependencias, imagenes, de otros componentes, de estilos
 import '../styles/App.scss';
 import callToApi from '../services/api';
-import {useState} from 'react';
+import { useState } from 'react';
 import Project from './Project';
 import ls from '../services/localStorage';
 
 function App() {
   // funciones, variables, handles...
-  const [data, setData] = useState({
+  const localStorageData = ls.get('data', {
     name: '',
     slogan: '',
     technologies: '',
@@ -21,6 +21,7 @@ function App() {
     image:
       'https://images.pexels.com/photos/6393342/pexels-photo-6393342.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
   });
+  const [data, setData] = useState(localStorageData);
   const [errorName, setErrorName] = useState('');
   const [errorSlogan, setErrorSlogan] = useState('');
   const [errorTech, setErrorTech] = useState('');
@@ -31,16 +32,12 @@ function App() {
   const [errorJob, setErrorJob] = useState('');
   const [responseUrl, setResponseUrl] = useState('');
   const [isHidden, setIsHidden] = useState(true);
-  
-  /*const getData = () => {
-  const localStorage = ls.get (data); 
-  setData(localStorage)};*/
 
   const handleInput = (ev) => {
     const inputId = ev.target.id;
     const inputValue = ev.target.value;
-    setData({...data, [inputId]: inputValue});
-    ls.set('data', data);
+    setData({ ...data, [inputId]: inputValue });
+    ls.set('data', { ...data, [inputId]: inputValue });
   };
 
   const handleClickCreateCard = () => {
