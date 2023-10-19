@@ -5,17 +5,17 @@
   margin-top: 3rem;
   padding-inline: 1rem;
   overflow-wrap: break-word;
-  @media (min-width: 768px){
+  @media (min-width: 768px) {
     grid-column: 1/2;
     grid-row: 2/3;
-    margin-top: 0; 
+    margin-top: 0;
     padding-inline: 3rem;
   }
 
   &_image {
-    object-fit: cover;
+    background-size: cover;
     @include size(100%, 30.7rem);
-    @media (min-width: 768px){
+    @media (min-width: 768px) {
       @include size(100%, 54.5rem);
     }
   }
@@ -27,7 +27,7 @@
     margin: auto;
     border-radius: 2rem;
     transform: translateY(-40px);
-    @media (min-width: 768px){
+    @media (min-width: 768px) {
       transform: translateY(-60px);
     }
   }
@@ -48,7 +48,7 @@
       &-subtitle {
         text-align: center;
         @include font($fontPoppins, 0.7rem, $dark, 300);
-        @media (min-width: 768px){
+        @media (min-width: 768px) {
           font-size: 1rem;
         }
       }
@@ -63,7 +63,7 @@
 
     &_title {
       @include font($fontPoppins, 1.4rem, $black, 500);
-      @media (min-width: 768px){
+      @media (min-width: 768px) {
         font-size: 2.4rem;
       }
     }
@@ -71,7 +71,7 @@
     &_slogan {
       @include font($fontPoppins, 1.2rem, $greyish-brown-two, 500);
       margin-bottom: 1.4rem;
-      @media (min-width: 768px){
+      @media (min-width: 768px) {
         font-size: 1.6rem;
       }
     }
@@ -79,7 +79,7 @@
     &_desc {
       @include font($fontPoppins, 0.8rem, $greyish-brown-88, regular);
       margin-bottom: 1.6rem;
-      @media (min-width: 768px){
+      @media (min-width: 768px) {
         font-size: 1.2rem;
       }
     }
@@ -88,7 +88,7 @@
   .technologies {
     display: flex;
     gap: 0.6rem;
-    @media (min-width: 768px){
+    @media (min-width: 768px) {
       gap: 1rem;
       justify-content: flex-start;
       flex-wrap: wrap;
@@ -97,25 +97,25 @@
     &_text {
       @include font($fontcatamaran, 1rem, $greyish-brown, 500);
       margin-right: 0.5rem;
-      @media (min-width: 768px){
+      @media (min-width: 768px) {
         font-size: 1.2rem;
-        background-color:  rgb(0, 0, 0, 0.05);
-        @include padding (2.4rem, 0.5rem);
+        background-color: rgb(0, 0, 0, 0.05);
+        @include padding(2.4rem, 0.5rem);
         border-radius: 1.2rem;
       }
     }
 
-    &_icon{
+    &_icon {
       border: solid 2px #bcd1d8;
       border-radius: 50%;
       box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
-      @include size (1.5rem, 1.5rem);
-      cursor: pointer; 
-      @media (min-width: 768px){
-        @include size (2rem, 2rem);
+      @include size(1.5rem, 1.5rem);
+      cursor: pointer;
+      @media (min-width: 768px) {
+        @include size(2rem, 2rem);
       }
-      &-img{
-        @media (min-width: 768px){
+      &-img {
+        @media (min-width: 768px) {
           font-size: 1.5rem;
         }
       }
@@ -128,22 +128,23 @@
 
     &_image {
       border-radius: 50%;
+      background-size: cover;
       @include size(9rem, 9rem);
-      @media (min-width: 768px){
-        @include size(12rem, 12rem)
+      @media (min-width: 768px) {
+        @include size(12rem, 12rem);
       }
     }
 
     &_job {
       @include font($fontcatamaran, 1rem, $warm-grey, 500);
-      @media (min-width: 768px){
+      @media (min-width: 768px) {
         font-size: 1.4rem;
       }
     }
 
     &_name {
       @include font($fontcatamaran, 1.4rem, $black-80, bold);
-      @media (min-width: 768px){
+      @media (min-width: 768px) {
         font-size: 1.8rem;
       }
     }

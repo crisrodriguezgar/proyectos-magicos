@@ -18,14 +18,14 @@ const Form = ({
   avatar,
   updateAvatar,
   text,
-  project, 
+  project,
   updateProject,
 }) => {
   const handleChange = (ev) => {
     const inputId = ev.target.id;
     const inputValue = ev.target.value;
-    handleInput (inputId, inputValue);
-  }
+    handleInput(inputId, inputValue);
+  };
   return (
     <section className="form">
       <h2 className="form_title">Información</h2>
@@ -137,9 +137,16 @@ const Form = ({
 
       <section className="form_btn">
         <div className="form_btn-first">
-         <GetAvatar  project={project} 
-        updateProject= {updateProject} text={'Subir foto del proyecto'}/>
-         <GetAvatar avatar={avatar} updateAvatar=  {updateAvatar} text={'Subir foto de la autora'}/>
+          <GetAvatar
+            project={project}
+            update={updateProject}
+            text={'Subir foto del proyecto'}
+          />
+          <GetAvatar
+            avatar={avatar}
+            update={updateAvatar}
+            text={'Subir foto de la autora'}
+          />
         </div>
         <div>
           <button className="form_btn-create" onClick={handleClickCreateCard}>

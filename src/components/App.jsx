@@ -5,7 +5,6 @@ import { useState } from 'react';
 import Project from './Project';
 import ls from '../services/localStorage';
 
-
 function App() {
   // funciones, variables, handles...
   const localStorageData = ls.get('data', {
@@ -17,10 +16,8 @@ function App() {
     desc: '',
     autor: '',
     job: '',
-    photo:
-      'https://images.pexels.com/photos/3194519/pexels-photo-3194519.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    image:
-      'https://images.pexels.com/photos/6393342/pexels-photo-6393342.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    photo: '',
+    image: '',
   });
   const [data, setData] = useState(localStorageData);
   const [errorName, setErrorName] = useState('');
@@ -35,11 +32,13 @@ function App() {
   const [isHidden, setIsHidden] = useState(true);
   const [avatar, setAvatar] = useState('');
   const updateAvatar = (avatar) => {
-    setAvatar(avatar)
+    setAvatar(avatar);
+    data.image = avatar;
   };
   const [project, setProject] = useState('');
   const updateProject = (project) => {
-    setProject(project)
+    setProject(project);
+    data.photo = project;
   };
 
   const handleInput = (inputId, inputValue) => {
@@ -98,8 +97,6 @@ function App() {
     });
   };
 
-  
-
   //html
   return (
     <div>
@@ -117,13 +114,12 @@ function App() {
         errorJob={errorJob}
         responseUrl={responseUrl}
         isHidden={isHidden}
-        avatar={avatar} 
-        updateAvatar= {updateAvatar}
-        project={project} 
-        updateProject= {updateProject}
+        avatar={avatar}
+        updateAvatar={updateAvatar}
+        project={project}
+        updateProject={updateProject}
       />
-      <div>
-      </div>
+      <div></div>
     </div>
   );
 }
