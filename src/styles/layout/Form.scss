@@ -130,6 +130,7 @@
       text-decoration: none;
       margin-bottom: 1.5rem;
       @include font($fontMonserrat, 1rem, aqua, 300);
+      overflow-wrap: break-word;
       cursor: pointer; 
       @media (min-width: 768px){
         font-size: 1.6rem; 

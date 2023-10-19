@@ -1,4 +1,5 @@
 import '../styles/layout/Form.scss';
+import GetAvatar from './GetAvatar';
 
 const Form = ({
   data,
@@ -14,7 +15,17 @@ const Form = ({
   errorJob,
   responseUrl,
   isHidden,
+  avatar,
+  updateAvatar,
+  text,
+  project, 
+  updateProject,
 }) => {
+  const handleChange = (ev) => {
+    const inputId = ev.target.id;
+    const inputValue = ev.target.value;
+    handleInput (inputId, inputValue);
+  }
   return (
     <section className="form">
       <h2 className="form_title">Información</h2>
@@ -32,7 +43,7 @@ const Form = ({
           name="name"
           id="name"
           value={data.name}
-          onChange={handleInput}
+          onChange={handleChange}
           required
         />
         <p className="error">{errorName}</p>
@@ -43,7 +54,7 @@ const Form = ({
           id="slogan"
           value={data.slogan}
           placeholder="Slogan *"
-          onChange={handleInput}
+          onChange={handleChange}
           required
         />
         <p className="error">{errorSlogan}</p>
@@ -54,7 +65,7 @@ const Form = ({
           id="repo"
           value={data.repo}
           placeholder="Repo *"
-          onChange={handleInput}
+          onChange={handleChange}
           required
         />
         <p className="error">{errorRepo}</p>
@@ -65,7 +76,7 @@ const Form = ({
           name="demo"
           id="demo"
           value={data.demo}
-          onChange={handleInput}
+          onChange={handleChange}
           required
         />
         <p className="error">{errorDemo}</p>
@@ -76,7 +87,7 @@ const Form = ({
           name="technologies"
           id="technologies"
           value={data.technologies}
-          onChange={handleInput}
+          onChange={handleChange}
           required
         />
         <p className="error">{errorTech}</p>
@@ -88,7 +99,7 @@ const Form = ({
           name="desc"
           id="desc"
           value={data.desc}
-          onChange={handleInput}
+          onChange={handleChange}
           required
         ></textarea>
         <p className="error">{errorDesc}</p>
@@ -107,7 +118,7 @@ const Form = ({
           name="autor"
           id="autor"
           value={data.autor}
-          onChange={handleInput}
+          onChange={handleChange}
           required
         />
         <p className="error">{errorAutor}</p>
@@ -118,7 +129,7 @@ const Form = ({
           name="job"
           id="job"
           value={data.job}
-          onChange={handleInput}
+          onChange={handleChange}
           required
         />
         <p className="error">{errorJob}</p>
@@ -126,12 +137,9 @@ const Form = ({
 
       <section className="form_btn">
         <div className="form_btn-first">
-          <button className="form_btn-first-upload">
-            Subir foto del proyecto
-          </button>
-          <button className="form_btn-first-upload">
-            Subir foto de la autora
-          </button>
+         <GetAvatar  project={project} 
+        updateProject= {updateProject} text={'Subir foto del proyecto'}/>
+         <GetAvatar avatar={avatar} updateAvatar=  {updateAvatar} text={'Subir foto de la autora'}/>
         </div>
         <div>
           <button className="form_btn-create" onClick={handleClickCreateCard}>

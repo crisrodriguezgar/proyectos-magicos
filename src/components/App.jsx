@@ -5,6 +5,7 @@ import { useState } from 'react';
 import Project from './Project';
 import ls from '../services/localStorage';
 
+
 function App() {
   // funciones, variables, handles...
   const localStorageData = ls.get('data', {
@@ -32,10 +33,16 @@ function App() {
   const [errorJob, setErrorJob] = useState('');
   const [responseUrl, setResponseUrl] = useState('');
   const [isHidden, setIsHidden] = useState(true);
+  const [avatar, setAvatar] = useState('');
+  const updateAvatar = (avatar) => {
+    setAvatar(avatar)
+  };
+  const [project, setProject] = useState('');
+  const updateProject = (project) => {
+    setProject(project)
+  };
 
-  const handleInput = (ev) => {
-    const inputId = ev.target.id;
-    const inputValue = ev.target.value;
+  const handleInput = (inputId, inputValue) => {
     setData({ ...data, [inputId]: inputValue });
     ls.set('data', { ...data, [inputId]: inputValue });
   };
@@ -91,6 +98,8 @@ function App() {
     });
   };
 
+  
+
   //html
   return (
     <div>
@@ -108,7 +117,13 @@ function App() {
         errorJob={errorJob}
         responseUrl={responseUrl}
         isHidden={isHidden}
+        avatar={avatar} 
+        updateAvatar= {updateAvatar}
+        project={project} 
+        updateProject= {updateProject}
       />
+      <div>
+      </div>
     </div>
   );
 }

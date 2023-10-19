@@ -4,13 +4,13 @@ import Intro from './Intro';
 import CardPreview from './CardPreview';
 import Form from './Form';
 
-const Project = ({data, handleInput, handleClickCreateCard, errorName, errorSlogan, errorRepo, errorDemo, errorTech, errorDesc, errorAutor, errorJob, responseUrl, isHidden}) => {
+const Project = ({data, handleInput, handleClickCreateCard, errorName, errorSlogan, errorRepo, errorDemo, errorTech, errorDesc, errorAutor, errorJob, responseUrl, isHidden, avatar, updateAvatar, project, updateProject}) => {
   return (
     <div className="container">
       <Header/>
       <main className="main">
         <Intro/>
-        <CardPreview data={data}/>
+        <CardPreview data={data} avatar={avatar}  project={project} />
         <Form 
         data={data} 
         handleInput={handleInput} 
@@ -24,7 +24,12 @@ const Project = ({data, handleInput, handleClickCreateCard, errorName, errorSlog
         errorAutor={errorAutor}
         errorJob={errorJob}
         responseUrl={responseUrl}
-        isHidden={isHidden}/>
+        isHidden={isHidden}
+        avatar={avatar} 
+        updateAvatar= {updateAvatar}
+        project={project} 
+        updateProject= {updateProject}
+        />
       </main>
       <Footer/>
     </div>

@@ -1,11 +1,13 @@
 import '../styles/layout/CardPreview.scss';
 import cover from '../assets/cover.jpeg';
 import avatar from '../assets/avatar.png';
+import Profile from './Profile';
 
-const CardPreview = ({data}) =>{
+const CardPreview = ({data, project, avatar}) =>{
     return(
         <section className="preview">
-          <img className="preview_image" src={cover} alt="" />
+          <Profile project={project} />
+          {/* <img className="preview_image" src={cover} alt="" /> */}
 
           <section className="preview_autor">
             <section className="infoProject">
@@ -45,7 +47,8 @@ const CardPreview = ({data}) =>{
             </section>
 
             <section className="infoAutor">
-              <img className="infoAutor_image" src={avatar} alt="" />
+            <Profile avatar={avatar} />
+              {/* <img className="infoAutor_image" src={avatar} alt="" /> */}
               <p className="infoAutor_job">
                 {data.job || 'Full Stack Developer'}
               </p>
