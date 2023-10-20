@@ -14,6 +14,8 @@
 
   &_image {
     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     @include size(100%, 30.7rem);
     @media (min-width: 768px) {
       @include size(100%, 54.5rem);

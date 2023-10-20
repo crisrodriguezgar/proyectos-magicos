@@ -31,14 +31,17 @@ function App() {
   const [responseUrl, setResponseUrl] = useState('');
   const [isHidden, setIsHidden] = useState(true);
   const [avatar, setAvatar] = useState('');
+
   const updateAvatar = (avatar) => {
     setAvatar(avatar);
     data.image = avatar;
+    ls.set('data', { ...data, image: avatar });
   };
   const [project, setProject] = useState('');
   const updateProject = (project) => {
     setProject(project);
     data.photo = project;
+    ls.set('data', { ...data, photo: project });
   };
 
   const handleInput = (inputId, inputValue) => {

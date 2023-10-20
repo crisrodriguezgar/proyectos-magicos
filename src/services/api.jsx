@@ -1,5 +1,6 @@
 const callToApi = (data) => {
   // Llamamos a la API
+  console.log(data);
   return fetch('https://dev.adalab.es/api/projectCard', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },

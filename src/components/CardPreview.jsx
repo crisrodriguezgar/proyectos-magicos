@@ -2,9 +2,9 @@ import '../styles/layout/CardPreview.scss';
 import defaultAvatar from '../assets/avatar.png';
 import defaultProject from '../assets/cover.jpeg';
 
-const CardPreview = ({ data, project, avatar }) => {
-  const avatarAutor = avatar === '' ? defaultAvatar : avatar;
-  const avatarProject = project === '' ? defaultProject : project;
+const CardPreview = ({ data }) => {
+  const avatarAutor = data.image === '' ? defaultAvatar : data.image;
+  const avatarProject = data.photo === '' ? defaultProject : data.photo;
   return (
     <section className="preview">
       <div
