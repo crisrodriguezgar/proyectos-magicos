@@ -1,9 +1,15 @@
 //imports dependencias, imagenes, de otros componentes, de estilos
+import {Route, Routes} from 'react-router-dom';
+import {useState} from 'react';
+
 import '../styles/App.scss';
 import callToApi from '../services/api';
-import { useState } from 'react';
 import Project from './Project';
 import ls from '../services/localStorage';
+import Header from './Header';
+import Footer from './Footer';
+import Intro from './Intro';
+import Landing from './Landing';
 
 function App() {
   // funciones, variables, handles...
@@ -102,28 +108,47 @@ function App() {
 
   //html
   return (
-    <div>
-      <Project
-        data={data}
-        handleInput={handleInput}
-        handleClickCreateCard={handleClickCreateCard}
-        errorName={errorName}
-        errorSlogan={errorSlogan}
-        errorRepo={errorRepo}
-        errorDemo={errorDemo}
-        errorTech={errorTech}
-        errorDesc={errorDesc}
-        errorAutor={errorAutor}
-        errorJob={errorJob}
-        responseUrl={responseUrl}
-        isHidden={isHidden}
-        avatar={avatar}
-        updateAvatar={updateAvatar}
-        project={project}
-        updateProject={updateProject}
-      />
-      <div></div>
-    </div>
+    <div className="container">
+        <Header />
+        <main className="main">
+          <Intro />
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <>
+                  <Landing />
+                </>
+              }
+            />
+            <Route
+              path="/project"
+              element={
+                <Project
+                  data={data}
+                  handleInput={handleInput}
+                  handleClickCreateCard={handleClickCreateCard}
+                  errorName={errorName}
+                  errorSlogan={errorSlogan}
+                  errorRepo={errorRepo}
+                  errorDemo={errorDemo}
+                  errorTech={errorTech}
+                  errorDesc={errorDesc}
+                  errorAutor={errorAutor}
+                  errorJob={errorJob}
+                  responseUrl={responseUrl}
+                  isHidden={isHidden}
+                  avatar={avatar}
+                  updateAvatar={updateAvatar}
+                  project={project}
+                  updateProject={updateProject}
+                />
+              }
+            />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
   );
 }
 

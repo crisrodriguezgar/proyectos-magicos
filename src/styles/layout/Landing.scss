@@ -1,0 +1,19 @@
+@import '../core/variables';
+@import '../core/mixins';
+
+.landing {
+    display: flex;
+    justify-content: center;
+  &_btn {
+    @include font($fontRoboto, 1.5rem, $white, bold);
+    @include padding(2rem, 0.5rem);text-transform: uppercase;
+    background-color: $dark-lilac;
+    border: none;
+    border-radius: 2rem;
+    cursor: pointer;
+    @media (min-width: 768px) {
+      font-size: 2rem;
+      @include padding(2.2rem, 0.8rem);
+    }
+  }
+}
