@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import '../styles/layout/CardPreview.scss';
 import defaultAvatar from '../assets/avatar.png';
 import defaultProject from '../assets/cover.jpeg';
@@ -60,6 +61,9 @@ const CardPreview = ({ data }) => {
       </section>
     </section>
   );
+};
+CardPreview.propTypes = {
+  data: PropTypes.object,
 };
 
 export default CardPreview;

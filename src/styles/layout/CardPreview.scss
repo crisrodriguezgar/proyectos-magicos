@@ -1,22 +1,27 @@
 @import '../core/variables';
 @import '../core/mixins';
-
-.project {
-  display: flex;
-  justify-content: center;
-  padding-block: 2rem;
-  &_btn {
-    @include font($fontRoboto, 1rem, $white, bold);
-    text-transform: uppercase;
-    background-color: $dark-lilac;
-    @include padding(2rem, 0.5rem);
-    border: none;
-    border-radius: 2rem;
-    cursor: pointer;
-    @media (min-width: 768px) {
-      font-size: 1.5rem;
-      margin-top: 1.4rem;
-      @include padding(2.2rem, 0.8rem);
+.linkProject {
+  @media (min-width: 768px) {
+    grid-column: 1/3;
+    grid-row: 2/3;
+  }
+  &_project {
+    display: flex;
+    justify-content: center;
+    padding-block: 2rem;
+    &-btn {
+      @include font($fontRoboto, 1rem, $white, bold);
+      text-transform: uppercase;
+      background-color: $dark-lilac;
+      @include padding(2rem, 0.5rem);
+      border: none;
+      border-radius: 2rem;
+      cursor: pointer;
+      @media (min-width: 768px) {
+        font-size: 1.5rem;
+        margin-top: 1.4rem;
+        @include padding(2.2rem, 0.8rem);
+      }
     }
   }
 }
@@ -27,7 +32,7 @@
   overflow-wrap: break-word;
   @media (min-width: 768px) {
     grid-column: 1/2;
-    grid-row: 2/3;
+    grid-row: 3/4;
     margin-top: 0;
     padding-inline: 3rem;
   }
