@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-const FakeCard = ({ avatar, title, slogan, desc, tech, job, name }) => {
+const FakeCard = ({avatar, title, slogan, desc, tech, job, name}) => {
   return (
     <>
       <section className="fakePreview">
@@ -15,16 +15,6 @@ const FakeCard = ({ avatar, title, slogan, desc, tech, job, name }) => {
           <p className="fakePreview_info-desc">{desc}</p>
           <section className="fakeTechnologies">
             <p className="fakeTechnologies_text">{tech}</p>
-            <a href="" target="_blank" rel="noreferrer">
-              <button className="fakeTechnologies_icon">
-                <i className="fakeTechnologies_icon-img"></i>
-              </button>
-            </a>
-            <a href="" target="_blank" rel="noreferrer">
-              <button className="fakeTechnologies_icon">
-                <i className="fakeTechnologies_icon-img"></i>
-              </button>
-            </a>
           </section>
         </section>
 
@@ -39,5 +29,11 @@ const FakeCard = ({ avatar, title, slogan, desc, tech, job, name }) => {
 };
 FakeCard.propTypes = {
   avatar: PropTypes.string,
+  title: PropTypes.string,
+  slogan: PropTypes.string,
+  desc: PropTypes.string,
+  tech: PropTypes.string,
+  job: PropTypes.string,
+  name: PropTypes.string,
 };
 export default FakeCard;

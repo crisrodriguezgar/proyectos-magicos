@@ -15,6 +15,8 @@ const Project = ({
   errorDesc,
   errorAutor,
   errorJob,
+  errorPhoto,
+  errorImage,
   responseUrl,
   isHidden,
   avatar,
@@ -38,6 +40,8 @@ const Project = ({
         errorDesc={errorDesc}
         errorAutor={errorAutor}
         errorJob={errorJob}
+        errorPhoto={errorPhoto}
+        errorImage={errorImage}
         responseUrl={responseUrl}
         isHidden={isHidden}
         avatar={avatar}
@@ -60,6 +64,8 @@ Project.propTypes = {
   errorDesc: PropTypes.string,
   errorAutor: PropTypes.string,
   errorJob: PropTypes.string,
+  errorImage: PropTypes.string,
+  errorPhoto: PropTypes.string,
   responseUrl: PropTypes.string,
   isHidden: PropTypes.bool,
   avatar: PropTypes.string,

@@ -34,6 +34,8 @@ function App() {
   const [errorDemo, setErrorDemo] = useState('');
   const [errorAutor, setErrorAutor] = useState('');
   const [errorJob, setErrorJob] = useState('');
+  const [errorPhoto, setErrorPhoto] = useState('');
+  const [errorImage, setErrorImage] = useState('');
   const [responseUrl, setResponseUrl] = useState('');
   const [isHidden, setIsHidden] = useState(true);
   const [avatar, setAvatar] = useState('');
@@ -96,6 +98,16 @@ function App() {
     } else {
       setErrorJob('');
     }
+    if (data.photo === '') {
+      setErrorPhoto('Por favor, añade una foto de tu proyecto');
+    } else {
+      setErrorPhoto('');
+    }
+    if (data.image === '') {
+      setErrorImage('Por favor, añade una foto de perfil');
+    } else {
+      setErrorImage('');
+    }
     callToApi(data).then((response) => {
       // Cuando la API responde guardamos los datos en el estado para que se vuelva a renderizar el componente
       setResponseUrl(response);
@@ -136,6 +148,8 @@ function App() {
                   errorDesc={errorDesc}
                   errorAutor={errorAutor}
                   errorJob={errorJob}
+                  errorPhoto={errorPhoto}
+                  errorImage={errorImage}
                   responseUrl={responseUrl}
                   isHidden={isHidden}
                   avatar={avatar}

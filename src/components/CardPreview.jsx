@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
 import '../styles/layout/CardPreview.scss';
 import defaultAvatar from '../assets/avatar.png';
-import defaultProject from '../assets/cover.jpeg';
+//import defaultProject from '../assets/cover.jpeg';
+import defaultProject from '../assets/brujafondo.jpg';
 
 const CardPreview = ({ data }) => {
   const avatarAutor = data.image === '' ? defaultAvatar : data.image;

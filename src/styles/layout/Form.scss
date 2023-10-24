@@ -144,6 +144,7 @@
 }
 .error {
   @include font($fontMonserrat, 1rem, #da5757, bold);
+  padding-bottom: 1rem;
   @media (min-width: 768px) {
     font-size: 1.4rem;
   }

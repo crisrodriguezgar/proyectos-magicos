@@ -14,6 +14,8 @@ const Form = ({
   errorDesc,
   errorAutor,
   errorJob,
+  errorPhoto,
+  errorImage,
   responseUrl,
   isHidden,
   avatar,
@@ -148,6 +150,8 @@ const Form = ({
             text={'Subir foto de la autora'}
           />
         </div>
+        <p className="error">{errorPhoto}</p>
+        <p className="error">{errorImage}</p>
         <div>
           <button className="form_btn-create" onClick={handleClickCreateCard}>
             Crear Tarjeta
@@ -181,6 +185,8 @@ Form.propTypes = {
   errorDesc: PropTypes.string,
   errorAutor: PropTypes.string,
   errorJob: PropTypes.string,
+  errorImage: PropTypes.string,
+  errorPhoto: PropTypes.string,
   responseUrl: PropTypes.string,
   isHidden: PropTypes.bool,
   avatar: PropTypes.string,
