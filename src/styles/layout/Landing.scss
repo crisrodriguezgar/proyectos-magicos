@@ -10,106 +10,112 @@
   }
 }
 
-.containerFake {
+.previewLanding {
   display: flex;
   gap: 2rem;
   flex-direction: column;
   justify-content: center;
   align-content: center;
   flex-wrap: wrap;
+
   @media (min-width: 768px) {
-    grid-column: 1/3;
-    grid-row: 3/4;
+    margin-block: 4rem;
     flex-direction: row;
+    grid-column: 1/3;
   }
 }
-
-.fakePreview {
-  margin-top: 3rem;
-  padding-inline: 1rem;
-  overflow-wrap: break-word;
-  @include dFlex(row-reverse, none, center);
-  border-radius: 2rem;
-  background-color: $white;
-  @include padding(1rem, 2rem);
-  @media (min-width: 768px) {
-    width: 40%;
-  }
-  &_info {
-    width: 60%;
-    display: flex;
-    padding-inline: 1rem;
-    align-items: center;
-    flex-direction: column;
-    &-container {
-      text-align: center;
-      @include font($fontPoppins, 0.7rem, $dark, 300);
-      &-line1 {
-        color: $dark;
-        @include size(3.4rem, 0.2rem);
-        border: 0;
-        background-image: linear-gradient(to right, #ffffff00, #010101bf);
-      }
-      &-subtitle {
-        text-align: center;
-        @include font($fontPoppins, 0.7rem, $dark, 300);
-        @media (min-width: 768px) {
-          font-size: 1rem;
-        }
-      }
-
-      &-line2 {
-        color: $dark;
-        @include size(3.4rem, 0.2rem);
-        border: 0;
-        background-image: linear-gradient(to right, #010101bf, #ffffff00);
-      }
-    }
-    &-title {
-      @include font($fontPoppins, 1.4rem, $black, 500);
-    }
-    &-slogan {
-      @include font($fontPoppins, 1.2rem, $greyish-brown-two, 500);
-      font-style: italic;
-      margin-bottom: 1.4rem;
-    }
-    &-desc {
-      @include font($fontPoppins, 1rem, $greyish-brown-88, regular);
-      margin-bottom: 1.6rem;
-    }
-  }
-  &_infoAutor {
-    width: 40%;
-    text-align: center;
-    &-image {
-      margin: auto;
-      border-radius: 50%;
-      background-size: cover;
-      background-position: center center;
-      background-repeat: no-repeat;
-      width: 9rem;
-      height: 9rem;
-    }
-    &-job {
-      @include font($fontcatamaran, 1rem, $warm-grey, 500);
-      font-size: 1.4rem;
-    }
-    &-name {
-      @include font($fontcatamaran, 1.4rem, $black-80, bold);
-      font-size: 1.8rem;
-    }
-  }
+.autorLanding{
+  background-color: red;
 }
 
-.fakeTechnologies {
-  display: flex;
-  gap: 0.6rem;
-  &_text {
-    @include font($fontcatamaran, 1rem, $greyish-brown, 500);
-    margin-right: 0.5rem;
-    font-size: 1.2rem;
-    background-color: rgba(0, 0, 0, 0.05);
-    padding: 1rem 0.8rem;
-    border-radius: 1.2rem;
-  }
-}
+// }
+
+// .fakePreview {
+//   margin-top: 3rem;
+//   padding-inline: 1rem;
+//   overflow-wrap: break-word;
+//   @include dFlex(row-reverse, none, center);
+//   border-radius: 2rem;
+//   background-color: $white;
+//   @include padding(1rem, 2rem);
+//   @media (min-width: 768px) {
+//     width: 40%;
+//   }
+//   &_info {
+//     width: 60%;
+//     display: flex;
+//     padding-inline: 1rem;
+//     align-items: center;
+//     flex-direction: column;
+//     &-container {
+//       text-align: center;
+//       @include font($fontPoppins, 0.7rem, $dark, 300);
+//       &-line1 {
+//         color: $dark;
+//         @include size(3.4rem, 0.2rem);
+//         border: 0;
+//         background-image: linear-gradient(to right, #ffffff00, #010101bf);
+//       }
+//       &-subtitle {
+//         text-align: center;
+//         @include font($fontPoppins, 0.7rem, $dark, 300);
+//         @media (min-width: 768px) {
+//           font-size: 1rem;
+//         }
+//       }
+
+//       &-line2 {
+//         color: $dark;
+//         @include size(3.4rem, 0.2rem);
+//         border: 0;
+//         background-image: linear-gradient(to right, #010101bf, #ffffff00);
+//       }
+//     }
+//     &-title {
+//       @include font($fontPoppins, 1.4rem, $black, 500);
+//     }
+//     &-slogan {
+//       @include font($fontPoppins, 1.2rem, $greyish-brown-two, 500);
+//       font-style: italic;
+//       margin-bottom: 1.4rem;
+//     }
+//     &-desc {
+//       @include font($fontPoppins, 1rem, $greyish-brown-88, regular);
+//       margin-bottom: 1.6rem;
+//     }
+//   }
+//   &_infoAutor {
+//     width: 40%;
+//     text-align: center;
+//     &-image {
+//       margin: auto;
+//       border-radius: 50%;
+//       background-size: cover;
+//       background-position: center center;
+//       background-repeat: no-repeat;
+//       width: 9rem;
+//       height: 9rem;
+//     }
+//     &-job {
+//       @include font($fontcatamaran, 1rem, $warm-grey, 500);
+//       font-size: 1.4rem;
+//     }
+//     &-name {
+//       @include font($fontcatamaran, 1.4rem, $black-80, bold);
+//       font-size: 1.8rem;
+//     }
+//   }
+// }
+
+// .fakeTechnologies {
+//   display: flex;
+//   gap: 0.6rem;
+//   &_text {
+//     @include font($fontcatamaran, 1rem, $greyish-brown, 500);
+//     margin-right: 0.5rem;
+//     font-size: 1.2rem;
+//     background-color: rgba(0, 0, 0, 0.05);
+//     padding: 1rem 0.8rem;
+//     border-radius: 1.2rem;
+//   }
+// }
