@@ -1,6 +1,6 @@
 //imports dependencias, imagenes, de otros componentes, de estilos
-import {Route, Routes} from 'react-router-dom';
-import {useState} from 'react';
+import { Route, Routes } from 'react-router-dom';
+import { useState } from 'react';
 
 import '../styles/App.scss';
 import callToApi from '../services/api';
@@ -58,8 +58,13 @@ function App() {
   };
 
   const handleClickCreateCard = () => {
+    const regexUrl = /^(https?|ftp):\/\/[^\s$?#]*[^\s/?#]$/;
     if (data.name === '') {
       setErrorName('Necesitamos saber el nombre de tu proyecto');
+    } else if (!/^[A-Za-z]+$/.test(data.name)) {
+      setErrorName(
+        'El nombre no debe contener números, ni caracteres especiales'
+      );
     } else {
       setErrorName('');
     }
@@ -80,6 +85,10 @@ function App() {
     }
     if (data.repo === '') {
       setErrorRepo('Incluye la url de tu repo');
+    } else if (!regexUrl.test(data.repo)) {
+      setErrorRepo(
+        'La url debe de ser algo como "https://github.com/Adalab/project-promo-u-module-3-team-2"'
+      );
     } else {
       setErrorRepo('');
     }
@@ -121,48 +130,48 @@ function App() {
   //html
   return (
     <div className="container">
-        <Header />
-        <main className="main">
-          <Intro />
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <>
-                  <Landing />
-                </>
-              }
-            />
-            <Route
-              path="/project"
-              element={
-                <Project
-                  data={data}
-                  handleInput={handleInput}
-                  handleClickCreateCard={handleClickCreateCard}
-                  errorName={errorName}
-                  errorSlogan={errorSlogan}
-                  errorRepo={errorRepo}
-                  errorDemo={errorDemo}
-                  errorTech={errorTech}
-                  errorDesc={errorDesc}
-                  errorAutor={errorAutor}
-                  errorJob={errorJob}
-                  errorPhoto={errorPhoto}
-                  errorImage={errorImage}
-                  responseUrl={responseUrl}
-                  isHidden={isHidden}
-                  avatar={avatar}
-                  updateAvatar={updateAvatar}
-                  project={project}
-                  updateProject={updateProject}
-                />
-              }
-            />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
+      <Header />
+      <main className="main">
+        <Intro />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Landing />
+              </>
+            }
+          />
+          <Route
+            path="/project"
+            element={
+              <Project
+                data={data}
+                handleInput={handleInput}
+                handleClickCreateCard={handleClickCreateCard}
+                errorName={errorName}
+                errorSlogan={errorSlogan}
+                errorRepo={errorRepo}
+                errorDemo={errorDemo}
+                errorTech={errorTech}
+                errorDesc={errorDesc}
+                errorAutor={errorAutor}
+                errorJob={errorJob}
+                errorPhoto={errorPhoto}
+                errorImage={errorImage}
+                responseUrl={responseUrl}
+                isHidden={isHidden}
+                avatar={avatar}
+                updateAvatar={updateAvatar}
+                project={project}
+                updateProject={updateProject}
+              />
+            }
+          />
+        </Routes>
+      </main>
+      <Footer />
+    </div>
   );
 }
 
