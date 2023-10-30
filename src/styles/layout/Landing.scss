@@ -24,8 +24,14 @@
     grid-column: 1/3;
   }
 }
-.autorLanding{
-  background-color: red;
+.autorLanding {
+  transform: translateY(0);
+  overflow-wrap: break-word;
+  @include padding(1rem, 2rem);
+  @media (min-width: 1200px) {
+    transform: translateY(0);
+    width: 40%;
+  }
 }
 
 // }

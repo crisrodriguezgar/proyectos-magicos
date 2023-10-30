@@ -1,5 +1,5 @@
 import defaultAvatar from '../assets/avatar.png';
-
+import PropTypes from 'prop-types';
 const Card = ({ data, autorLanding }) => {
   const avatarAutor = data.image === '' ? defaultAvatar : data.image;
   return (
@@ -51,5 +51,8 @@ const Card = ({ data, autorLanding }) => {
     </section>
   );
 };
-
+Card.propTypes = {
+  data: PropTypes.object,
+  autorLanding: PropTypes.string,
+};
 export default Card;
