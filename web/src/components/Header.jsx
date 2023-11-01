@@ -7,8 +7,8 @@ const Header = () => {
     <header className='header'>
       <Link to='/'>
         <div className='header_left'>
-          <i className='fa-solid fa-laptop-code fa-2xl header_left-icon'></i>
-          <p className='header_left-text'>Proyectos Molones</p>
+          <i class="fa-solid fa-cat fa-2xl header_left-icon"></i>
+          <p className='header_left-text'>Proyectos Mágicos</p>
         </div>
       </Link>
       <img className='header_logo' src={logo} alt='Logo Adalab' />

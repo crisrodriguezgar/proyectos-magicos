@@ -33,7 +33,12 @@ const Form = ({
       <h2 className="form_title">Información</h2>
 
       <section className="form_askInfo">
-        <p className="form_askInfo-subtitle">Cuéntanos sobre el proyecto</p>
+      <div className="form_askInfo_container">
+          <p className="form_askInfo_container-subtitle">
+            Cuéntanos sobre el proyecto
+          </p>{' '}
+          <i class="fa-regular fa-trash-can fa-2xl form_askInfo_container-trash"></i>
+        </div>
         <hr className="form_askInfo-line" />
       </section>
 

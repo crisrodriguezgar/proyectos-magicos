@@ -2,7 +2,7 @@
 @import '../core/mixins';
 
 .container {
-  background-color: $dark;
+  background-image: radial-gradient(circle at 50% 50%, $dusk, #211e2e 92%);
   padding: 2.5rem;
 }
 .header {

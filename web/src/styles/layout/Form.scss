@@ -19,11 +19,25 @@
   }
   &_askInfo {
     padding: 1.8rem;
-    &-subtitle {
-      @include font($fontMonserrat, 1.5rem, $white, 300);
-      padding-bottom: 10px;
-      @media (min-width: 768px) {
-        font-size: 1.8rem;
+    &_container {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      justify-content: center;
+      &-subtitle {
+        @include font($fontMonserrat, 1.5rem, $white, 300);
+        padding-bottom: 10px;
+        @media (min-width: 768px) {
+          font-size: 1.8rem;
+        }
+      }
+      &-trash {
+        font-size: 2.5rem;
+        color: $dusk;
+        cursor: pointer;
+        &:hover {
+          color: $dark-lilac;
+        }
       }
     }
     &-line {
@@ -85,12 +99,15 @@
         @include btn(
           none,
           4rem,
-          linear-gradient(90deg, #8176af -1.57%, #c0b7e8 98.43%)
+          linear-gradient(90deg, $dusk -1.57%, $dark-lilac 98.43%)
         );
         margin-right: 0.5rem;
         margin-bottom: 1.8rem;
         width: 12rem;
         cursor: pointer;
+        &:hover {
+          background: linear-gradient(90deg, $dark-lilac -1.57%, $dusk 98.43%);
+        }
         @media (min-width: 768px) {
           font-size: 1.2rem;
           @include padding(2.5rem, 1rem);
@@ -103,14 +120,19 @@
       @include font($fontMonserrat, 1rem, $white, bold);
       @include padding(4rem, 1rem);
       @include btn(
-        solid 2px white,
+        solid 2px $dusk,
         4rem,
-        linear-gradient(90deg, #8176af -1.57%, #c0b7e8 98.43%)
+        linear-gradient(90deg, $dusk -1.57%, $dark-lilac 98.43%)
       );
-      margin-bottom: 2rem;
+      margin-bottom: 3rem;
       cursor: pointer;
+      transition-duration: 0.8s;
+      &:hover {
+        background: linear-gradient(90deg, $dark-lilac -1.57%, $dusk 98.43%);
+      }
       @media (min-width: 768px) {
         font-size: 1.6rem;
+        margin-bottom: 5rem;
         @include padding(4.5rem, 1.5rem);
       }
     }
@@ -129,8 +151,8 @@
     }
     &-link {
       text-decoration: none;
-      margin-bottom: 1.5rem;
-      @include font($fontMonserrat, 1rem, aqua, 300);
+      margin-bottom: 3rem;
+      @include font($fontMonserrat, 1rem, $dark-lilac, 300);
       overflow-wrap: break-word;
       cursor: pointer;
       @media (min-width: 768px) {

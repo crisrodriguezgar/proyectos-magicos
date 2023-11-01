@@ -1,5 +1,6 @@
 @import '../core/variables';
 @import '../core/mixins';
+
 .linkProject {
   @media (min-width: 768px) {
     grid-column: 1/3;
