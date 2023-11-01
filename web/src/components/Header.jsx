@@ -7,7 +7,7 @@ const Header = () => {
     <header className='header'>
       <Link to='/'>
         <div className='header_left'>
-          <i class="fa-solid fa-cat fa-2xl header_left-icon"></i>
+          <i className="fa-solid fa-cat fa-2xl header_left-icon"></i>
           <p className='header_left-text'>Proyectos Mágicos</p>
         </div>
       </Link>
