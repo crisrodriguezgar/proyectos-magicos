@@ -3,7 +3,7 @@ import {Route, Routes} from 'react-router-dom';
 import React, {useState} from 'react';
 
 import '../styles/App.scss';
-import callToApi from '../services/api';
+import objectApi from '../services/api';
 import Project from './Project';
 import ls from '../services/localStorage';
 import Header from './Header';
@@ -131,7 +131,7 @@ function App() {
     } else {
       setErrorImage('');
     }
-    callToApi(data).then((response) => {
+    objectApi.post(data).then((response) => {
       // Cuando la API responde guardamos los datos en el estado para que se vuelva a renderizar el componente
       setResponseUrl(response);
       if (response !== undefined) {
