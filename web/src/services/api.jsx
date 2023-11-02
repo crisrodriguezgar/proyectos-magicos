@@ -1,4 +1,4 @@
-const callToApi = (data) => {
+const postToApi = (data) => {
   // Llamamos a la API
   console.log(data);
   return fetch('https://dev.adalab.es/api/projectCard', {
@@ -14,4 +14,18 @@ const callToApi = (data) => {
     });
 };
 
-export default callToApi;
+const getToApi = () => {
+  return fetch('http://localhost:3001/listprojects')
+    .then((response) => response.json())
+    .then((response) => {
+      const result = response;
+      return result;
+    });
+};
+
+const objectApi = {
+  post: postToApi,
+  get: getToApi,
+};
+
+export default objectApi;
