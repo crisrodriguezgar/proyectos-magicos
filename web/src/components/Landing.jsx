@@ -9,31 +9,29 @@ const Landing = () => {
 
   useEffect(() => {
     objectApi.get().then((response) => {
-      setDataProjects(response);
+      const dataApi = response;
+      console.log(dataApi);
+      setDataProjects(dataApi);
       console.log(dataProjects);
     });
   }, []);
 
-  const data1 = {
-    name: 'El Rincón de las Brujas Risueñas',
-    slogan: '"Donde la magia se encuentra con el humor"',
-    technologies: 'HTML - CSS - JavaScript - React',
-    repo: 'https://github.com/Adalab/project-promo-U-module-3-team-2',
-    demo: 'https://beta.adalab.es/project-promo-U-module-3-team-2/',
-    desc: 'En el Rincón de las Brujas Risueñas, Lilith Blackspell lidera un aquelarre de brujas cómicas en la creación de un sitio web mágico lleno de hechizos humorísticos y travesuras encantadoras. Únete a nosotros para una experiencia web única donde la comedia y la brujería se fusionan para embrujar tu día con risas',
-    autor: 'Lilith Blackspell',
-    job: 'Maestra de la Web Bruja',
-    image: '',
+  const renderProjects = () => {
+    return dataProjects.map((project) => {
+      return (
+        <Card
+          key={project.idProject}
+          data={project}
+          autorLanding='autorLanding'
+        />
+      );
+    });
   };
+
   return (
     <>
       <Btn text={'Nuevo Proyecto'} route={'/project'} />
-      <section className="preview previewLanding">
-        <Card data={data1} autorLanding="autorLanding" />
-        <Card data={data1} autorLanding="autorLanding" />
-        <Card data={data1} autorLanding="autorLanding" />
-        <Card data={data1} autorLanding="autorLanding" />
-      </section>
+      <section className='preview previewLanding'>{renderProjects()};</section>
     </>
   );
 };

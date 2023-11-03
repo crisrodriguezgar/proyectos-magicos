@@ -18,8 +18,23 @@ const getToApi = () => {
   return fetch('http://localhost:3001/listprojects')
     .then((response) => response.json())
     .then((response) => {
-      const result = response;
-      return result;
+      const cleanData = response.data.map((item) => {
+        return {
+          idProject: item.idProject,
+          name: item.nameProject,
+          slogan: item.sloganProject,
+          technologies: item.techProject,
+          repo: item.urlGit,
+          demo: item.urlDemo,
+          desc: item.descProject,
+          autor: item.nameAutor,
+          job: item.jobAutor,
+          photo: item.imageProject,
+          image: item.imageAutor,
+          idAutor: item.idAutor,
+        };
+      });
+      return cleanData;
     });
 };
 
