@@ -23,6 +23,7 @@ const Project = ({
   updateAvatar,
   project,
   updateProject,
+  handleReset
 }) => {
   return (
     <>
@@ -32,6 +33,7 @@ const Project = ({
         data={data}
         handleInput={handleInput}
         handleClickCreateCard={handleClickCreateCard}
+        handleReset={handleReset}
         errorName={errorName}
         errorSlogan={errorSlogan}
         errorRepo={errorRepo}
@@ -56,6 +58,7 @@ Project.propTypes = {
   data: PropTypes.object,
   handleInput: PropTypes.func,
   handleClickCreateCard: PropTypes.func,
+  handleReset: PropTypes.func,
   errorName: PropTypes.string,
   errorSlogan: PropTypes.string,
   errorRepo: PropTypes.string,

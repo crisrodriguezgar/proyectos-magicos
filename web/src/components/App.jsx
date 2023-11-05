@@ -57,6 +57,34 @@ function App() {
     setData({ ...data, [inputId]: inputValue });
     ls.set('data', { ...data, [inputId]: inputValue });
   };
+ 
+  const handleReset = () => {
+    const emptyData = {
+      name: '',
+      slogan: '',
+      technologies: '',
+      repo: '',
+      demo: '',
+      desc: '',
+      autor: '',
+      job: '',
+      photo: '',
+      image: '',
+    }
+    setErrorName('');
+    setErrorSlogan('');
+    setErrorRepo('');
+    setErrorDemo('');
+    setErrorDesc('');
+    setErrorImage('');
+    setErrorJob('');
+    setErrorPhoto('');
+    setErrorAutor('');
+    setErrorTech('');
+    ls.clear ();
+    setIsHidden (true);
+    setData(emptyData);
+  };
 
   const handleClickCreateCard = () => {
     const regexAlf = /^[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ\s\-']+$/;
@@ -173,6 +201,7 @@ function App() {
                 data={data}
                 handleInput={handleInput}
                 handleClickCreateCard={handleClickCreateCard}
+                handleReset={handleReset}
                 errorName={errorName}
                 errorSlogan={errorSlogan}
                 errorRepo={errorRepo}

@@ -22,6 +22,7 @@ const Form = ({
   updateAvatar,
   project,
   updateProject,
+  handleReset,
 }) => {
   const handleChange = (ev) => {
     const inputId = ev.target.id;
@@ -30,7 +31,7 @@ const Form = ({
   };
   return (
     <section className="form">
-      <i className="fa-regular fa-trash-can fa-2xl form_trash"></i>
+      <i className="fa-regular fa-trash-can fa-2xl form_trash" onClick={handleReset}></i>
       <h2 className="form_title">Información</h2>
 
       <section className="form_askInfo">
@@ -182,6 +183,7 @@ Form.propTypes = {
   data: PropTypes.object,
   handleInput: PropTypes.func,
   handleClickCreateCard: PropTypes.func,
+  handleReset: PropTypes.func,
   errorName: PropTypes.string,
   errorSlogan: PropTypes.string,
   errorRepo: PropTypes.string,
