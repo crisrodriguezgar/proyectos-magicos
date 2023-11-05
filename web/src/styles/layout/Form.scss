@@ -157,8 +157,8 @@
       //   box-shadow: $dark-lilac 0px 0px 0px 0px;
       //   transform: translateY(5px);
       //   transition: 200ms;
-      //}
-      &:hover,:focus {
+      // }
+       &:hover,:focus {
         color: $white;
         background: linear-gradient(90deg, $dusk -1.57%, $dark-lilac 98.43%);
         border: solid $dusk;

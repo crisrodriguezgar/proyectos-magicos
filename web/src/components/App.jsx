@@ -61,7 +61,7 @@ function App() {
   const handleClickCreateCard = () => {
     const regexAlf = /^[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ\s\-']+$/;
     const regexUrl = /^(https?|ftp):\/\/[^\s$?#][^\s]*$/;
-    const isValid = true;
+    let isValid = true;
     if (data.name === '') {
       setErrorName('Necesitamos saber el nombre de tu proyecto');
       isValid = false;
@@ -90,37 +90,45 @@ function App() {
     }
     if (data.repo === '') {
       setErrorRepo('Incluye la url de tu repo');
+      isValid = false;
     } else if (!regexUrl.test(data.repo)) {
       setErrorRepo(
         'La url debe de ser algo como "https://github.com/Adalab/project-promo-u-module-3-team-2"'
       );
+      isValid = false;
     } else {
       setErrorRepo('');
     }
     if (data.demo === '') {
       setErrorDemo('Por favor, añade el enlace de tu página');
+      isValid = false;
     } else if (!regexUrl.test(data.demo)) {
       setErrorDemo(
         'La url debe de ser algo como "https://beta.adalab.es/project-promo-U-module-3-team-2"'
       );
+      isValid = false;
     } else {
       setErrorDemo('');
     }
     if (data.autor === '') {
       setErrorAutor('¿Cuál es tu nombre?');
+      isValid = false;
     } else if (!regexAlf.test(data.autor)) {
       setErrorAutor(
         'El nombre no debe contener números, ni caracteres especiales'
       );
+      isValid = false;
     } else {
       setErrorAutor('');
     }
     if (data.job === '') {
       setErrorJob('¿A qué te dedicas?');
+      isValid = false;
     } else if (!regexAlf.test(data.job)) {
       setErrorJob(
         'El trabajo no debe contener números, ni caracteres especiales'
       );
+      isValid = false;
     } else {
       setErrorJob('');
     }
