@@ -22,7 +22,7 @@ const Landing = () => {
         <Card
           key={project.idProject}
           data={project}
-          autorLanding='autorLanding'
+          autorLanding="autorLanding"
         />
       );
     });
@@ -31,7 +31,7 @@ const Landing = () => {
   return (
     <>
       <Btn text={'Nuevo Proyecto'} route={'/project'} />
-      <section className='preview previewLanding'>{renderProjects()};</section>
+      <section className="preview previewLanding">{renderProjects()}</section>
     </>
   );
 };

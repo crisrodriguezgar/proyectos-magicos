@@ -12,7 +12,7 @@ const CardPreview = ({ data }) => {
         style={{ backgroundImage: `url(${avatarProject})` }}
       ></div>
 
-      <Card data={data}/>
+      <Card data={data} />
     </section>
   );
 };

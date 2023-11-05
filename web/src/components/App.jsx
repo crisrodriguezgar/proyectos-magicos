@@ -1,6 +1,6 @@
 //imports dependencias, imagenes, de otros componentes, de estilos
-import {Route, Routes} from 'react-router-dom';
-import React, {useState} from 'react';
+import { Route, Routes } from 'react-router-dom';
+import React, { useState } from 'react';
 
 import '../styles/App.scss';
 import objectApi from '../services/api';
@@ -44,18 +44,18 @@ function App() {
   const updateAvatar = (avatar) => {
     setAvatar(avatar);
     data.image = avatar;
-    ls.set('data', {...data, image: avatar});
+    ls.set('data', { ...data, image: avatar });
   };
   const [project, setProject] = useState('');
   const updateProject = (project) => {
     setProject(project);
     data.photo = project;
-    ls.set('data', {...data, photo: project});
+    ls.set('data', { ...data, photo: project });
   };
 
   const handleInput = (inputId, inputValue) => {
-    setData({...data, [inputId]: inputValue});
-    ls.set('data', {...data, [inputId]: inputValue});
+    setData({ ...data, [inputId]: inputValue });
+    ls.set('data', { ...data, [inputId]: inputValue });
   };
 
   const handleClickCreateCard = () => {
@@ -142,19 +142,17 @@ function App() {
     } else {
       setErrorImage('');
     }
-    if (isValid){
-      
+    if (isValid) {
       objectApi.post(data).then((response) => {
-      // Cuando la API responde guardamos los datos en el estado para que se vuelva a renderizar el componente
-      
-      setResponseUrl(response);
-      if (response !== undefined) {
-        setIsHidden(false);
-      }
-      console.log(response);
-    });
-    }
-    else{
+        // Cuando la API responde guardamos los datos en el estado para que se vuelva a renderizar el componente
+
+        setResponseUrl(response);
+        if (response !== undefined) {
+          setIsHidden(false);
+        }
+        console.log(response);
+      });
+    } else {
       setIsHidden(true);
     }
   };
@@ -162,19 +160,12 @@ function App() {
   //html
   return (
     <div className="container">
-      <CreateTrail/>
+      <CreateTrail />
       <Header />
       <main className="main">
         <Intro />
         <Routes>
-          <Route
-            path="/"
-            element={
-              <>
-                <Landing />
-              </>
-            }
-          />
+          <Route path="/" element={<Landing />} />
           <Route
             path="/project"
             element={
