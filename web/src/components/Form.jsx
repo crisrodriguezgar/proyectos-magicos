@@ -30,16 +30,16 @@ const Form = ({
   };
   return (
     <section className="form">
+      <i className="fa-regular fa-trash-can fa-2xl form_trash"></i>
       <h2 className="form_title">Información</h2>
 
       <section className="form_askInfo">
-      <div className="form_askInfo_container">
+        <div className="form_askInfo_container">
           <p className="form_askInfo_container-subtitle">
             Cuéntanos sobre el proyecto
-          </p>{' '}
-          <i className="fa-regular fa-trash-can fa-2xl form_askInfo_container-trash"></i>
+          </p>
+          <hr className="form_askInfo-line" />
         </div>
-        <hr className="form_askInfo-line" />
       </section>
 
       <fieldset className="form_project">

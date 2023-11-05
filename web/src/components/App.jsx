@@ -61,12 +61,15 @@ function App() {
   const handleClickCreateCard = () => {
     const regexAlf = /^[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ\s\-']+$/;
     const regexUrl = /^(https?|ftp):\/\/[^\s$?#][^\s]*$/;
+    const isValid = true;
     if (data.name === '') {
       setErrorName('Necesitamos saber el nombre de tu proyecto');
+      isValid = false;
     } else if (!regexAlf.test(data.name)) {
       setErrorName(
         'El nombre no debe contener números, ni caracteres especiales'
       );
+      isValid = false;
     } else {
       setErrorName('');
     }
@@ -131,14 +134,21 @@ function App() {
     } else {
       setErrorImage('');
     }
-    objectApi.post(data).then((response) => {
+    if (isValid){
+      
+      objectApi.post(data).then((response) => {
       // Cuando la API responde guardamos los datos en el estado para que se vuelva a renderizar el componente
+      
       setResponseUrl(response);
       if (response !== undefined) {
         setIsHidden(false);
       }
       console.log(response);
     });
+    }
+    else{
+      setIsHidden(true);
+    }
   };
 
   //html
