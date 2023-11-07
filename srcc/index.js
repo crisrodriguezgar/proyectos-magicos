@@ -79,14 +79,13 @@ app.get('/project/:idProject', async (req, res) => {
   const id = req.params.idProject;
   const selectProject =
     'SELECT * FROM projects INNER JOIN autor ON autor.idAutor = projects.fk_autor WHERE idProject =?';
-    const conn =await getConnection();
+    const conn = await getConnection();
     const [results] = await conn.query(selectProject, [id]);
     if (results.length === 0){
       res.render('notFound');
     }else{
-      res.render('detailProject',{
-        project: results [0]
-
+      res.render('detailProject', {
+        project: results[0],
       });
     }
     console.log(results[0])

@@ -4,7 +4,7 @@
   "description": "Proyectos Molones",
   "main": "index.js",
   "scripts": {
-    "start": "node src/index.js",
+    "start": "node srcc/index.js",
     "dev": "nodemon srcc/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "publish": "cd web && npm run build && cd .. && rm -rf ./srcc/public-react && mv ./web/dist ./srcc/public-react"
