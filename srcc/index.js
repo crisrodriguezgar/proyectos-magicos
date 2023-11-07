@@ -1,19 +1,21 @@
 const express = require('express');
 const cors = require('cors');
 const mysql = require('mysql2/promise');
+require('dotenv').config();
 
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.set ('view engine', 'ejs');
 
 //conexión a la bases de datos
 async function getConnection() {
   //creary configurar la conexion
   const connection = await mysql.createConnection({
-    host: 'sql.freedb.tech',
-    user: 'freedb_admin_Hechiceras',
-    password: '8f6q2y%Y4NZk!gM',
-    database: 'freedb_projectosMolones',
+    host: process.env.HOST,
+    user: process.env.DBUSER,
+    password: process.env.PASS,
+    database: process.env.DATABASE,
   });
 
   connection.connect();
@@ -48,9 +50,12 @@ app.post('/createproject', async (req, res) => {
     body.job,
     body.image,
   ]);
+  const idAutor = result.insertId;
 
-  if (result.insertId) {
-    const [result2] = await conn.query(queryProject, [
+  let idProject = '';
+  let result2 = [];
+  if (idAutor) {
+    result2 = await conn.query(queryProject, [
       body.name,
       body.slogan,
       body.repo,
@@ -58,16 +63,38 @@ app.post('/createproject', async (req, res) => {
       body.technologies,
       body.desc,
       body.photo,
-      result.insertId,
+      idAutor,
     ]);
+    console.log(result2[0]);
   }
-
-  const insertId = result.insertId;
-
-  /*   res.json({
-    cardUrl: 'http://localhost:3002/project' + insertId,
-  }); */
+  idProject = result2[0].insertId;
+  res.json({
+    cardURL: 'http://localhost:3001/project/' + idProject,
+    success:true
+  });
+  conn.end();
 });
 
-const staticServerPath = './web/dist/';
+app.get('/project/:idProject', async (req, res) => {
+  const id = req.params.idProject;
+  const selectProject =
+    'SELECT * FROM projects INNER JOIN autor ON autor.idAutor = projects.fk_autor WHERE idProject =?';
+    const conn =await getConnection();
+    const [results] = await conn.query(selectProject, [id]);
+    if (results.length === 0){
+      res.render('notFound');
+    }else{
+      res.render('detailProject',{
+        project: results [0]
+
+      });
+    }
+    console.log(results[0])
+    conn.end();
+});
+
+const staticServerPath = './srcc/public-react/';
 app.use(express.static(staticServerPath));
+
+const pathServerPublicStyles = './srcc/public-css';
+app.use(express.static(pathServerPublicStyles));
