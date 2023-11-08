@@ -5,8 +5,8 @@ require('dotenv').config();
 
 const app = express();
 app.use(cors());
-app.use(express.json());
-app.set ('view engine', 'ejs');
+app.use(express.json({ limit: '100MB' }));
+app.set('view engine', 'ejs');
 
 //conexión a la bases de datos
 async function getConnection() {
@@ -70,7 +70,7 @@ app.post('/createproject', async (req, res) => {
   idProject = result2[0].insertId;
   res.json({
     cardURL: 'http://localhost:3001/project/' + idProject,
-    success:true
+    success: true,
   });
   conn.end();
 });
@@ -79,17 +79,17 @@ app.get('/project/:idProject', async (req, res) => {
   const id = req.params.idProject;
   const selectProject =
     'SELECT * FROM projects INNER JOIN autor ON autor.idAutor = projects.fk_autor WHERE idProject =?';
-    const conn = await getConnection();
-    const [results] = await conn.query(selectProject, [id]);
-    if (results.length === 0){
-      res.render('notFound');
-    }else{
-      res.render('detailProject', {
-        project: results[0],
-      });
-    }
-    console.log(results[0])
-    conn.end();
+  const conn = await getConnection();
+  const [results] = await conn.query(selectProject, [id]);
+  if (results.length === 0) {
+    res.render('notFound');
+  } else {
+    res.render('detailProject', {
+      project: results[0],
+    });
+  }
+  console.log(results[0]);
+  conn.end();
 });
 
 const staticServerPath = './srcc/public-react/';
