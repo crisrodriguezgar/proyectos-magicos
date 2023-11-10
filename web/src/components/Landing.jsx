@@ -19,11 +19,13 @@ const Landing = () => {
   const renderProjects = () => {
     return dataProjects.map((project) => {
       return (
+      <a href={`https://proyectos-magicos.onrender.com/project/${project.idProject}`} key={project.idProject} className="cardClick">
         <Card
           key={project.idProject}
           data={project}
           autorLanding="autorLanding"
         />
+      </a>
       );
     });
   };
