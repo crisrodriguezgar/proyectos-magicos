@@ -1,9 +1,9 @@
 const postToApi = (data) => {
   // Llamamos a la API
   console.log(data);
-  return fetch('http://localhost:3001/createproject', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+  return fetch("https://proyectos-magicos.onrender.com/createproject", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
   })
     .then((response) => response.json())
@@ -15,7 +15,7 @@ const postToApi = (data) => {
 };
 
 const getToApi = () => {
-  return fetch('http://localhost:3001/listprojects')
+  return fetch("https://proyectos-magicos.onrender.com/listprojects")
     .then((response) => response.json())
     .then((response) => {
       const cleanData = response.data.map((item) => {
