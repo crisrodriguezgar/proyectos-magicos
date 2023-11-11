@@ -47,9 +47,9 @@ const Card = ({data, autorLanding, showIcon}) => {
         ></div>
         <p className="infoAutor_job">{data.job || 'Full Stack Developer'}</p>
         <p className="infoAutor_name">{data.autor || 'Emmelie Björklund'}</p>
-        {showIcon ? (
-          <i className="fa-solid fa-trash-can fa-2xl iconTrash"></i>
-        ) : null}
+        <button className="btn">{showIcon ? (
+          <i className="fa-solid fa-trash-can fa-2xl btn_iconTrash"></i>
+        ) : null}</button>
       </section>
     </section>
   );

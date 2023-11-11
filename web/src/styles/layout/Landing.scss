@@ -43,12 +43,19 @@
   }
 }
 
-.iconTrash {
+.btn {
+  background-color: transparent;
+  border: none;
   cursor: pointer;
-  color: $dark-lilac;
-  font-size: 2rem;
-  padding-inline: 2rem;
-  padding-block: 2rem;
-  //transform: translateY(-130px);
-  //transform: translateX(160px);
+  &:hover {
+      border-radius: 50%;
+      background-color: #9e166359;
+    }
+  &_iconTrash {
+    cursor: pointer;
+    color: $dark-lilac;
+    font-size: 2rem;
+    @include padding (1.3rem, 2rem);
+    
+  }
 }
