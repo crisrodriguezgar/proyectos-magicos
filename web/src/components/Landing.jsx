@@ -28,7 +28,7 @@ const Landing = () => {
             key={project.idProject}
             data={project}
             autorLanding="autorLanding"
-            mostrarIcono={true}
+            showIcon={true}
           />
         </a>
       );
