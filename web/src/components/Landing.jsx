@@ -28,6 +28,9 @@ const Landing = () => {
             key={project.idProject}
             data={project}
             autorLanding="autorLanding"
+            titleLanding="titleLanding"
+            descLanding="descLanding"
+            sloganLanding="sloganLanding"
             showIcon={true}
           />
         </a>
