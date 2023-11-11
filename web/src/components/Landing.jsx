@@ -2,7 +2,7 @@ import '../styles/layout/Landing.scss';
 import Btn from './Btn';
 import Card from './Card';
 import objectApi from '../services/api';
-import { useEffect, useState } from 'react';
+import {useEffect, useState} from 'react';
 
 const Landing = () => {
   const [dataProjects, setDataProjects] = useState([]);
@@ -19,13 +19,18 @@ const Landing = () => {
   const renderProjects = () => {
     return dataProjects.map((project) => {
       return (
-      <a href={`https://proyectos-magicos.onrender.com/project/${project.idProject}`} key={project.idProject} className="cardClick">
-        <Card
+        <a
+          href={`https://proyectos-magicos.onrender.com/project/${project.idProject}`}
           key={project.idProject}
-          data={project}
-          autorLanding="autorLanding"
-        />
-      </a>
+          className="cardClick"
+        >
+          <Card
+            key={project.idProject}
+            data={project}
+            autorLanding="autorLanding"
+            mostrarIcono={true}
+          />
+        </a>
       );
     });
   };

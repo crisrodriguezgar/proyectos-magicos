@@ -1,6 +1,6 @@
 import defaultAvatar from '../assets/avatar.png';
 import PropTypes from 'prop-types';
-const Card = ({ data, autorLanding }) => {
+const Card = ({data, autorLanding, mostrarIcono}) => {
   const avatarAutor = data.image === '' ? defaultAvatar : data.image;
   return (
     <section className={`preview_autor ${autorLanding}`}>
@@ -43,10 +43,13 @@ const Card = ({ data, autorLanding }) => {
       <section className="infoAutor">
         <div
           className="infoAutor_image"
-          style={{ backgroundImage: `url(${avatarAutor})` }}
+          style={{backgroundImage: `url(${avatarAutor})`}}
         ></div>
         <p className="infoAutor_job">{data.job || 'Full Stack Developer'}</p>
         <p className="infoAutor_name">{data.autor || 'Emmelie Björklund'}</p>
+        {mostrarIcono ? (
+          <i className="fa-solid fa-trash-can fa-2xl iconTrash"></i>
+        ) : null}
       </section>
     </section>
   );
