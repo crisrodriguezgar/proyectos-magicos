@@ -40,6 +40,7 @@ function App() {
   const [responseUrl, setResponseUrl] = useState('');
   const [isHidden, setIsHidden] = useState(true);
   const [avatar, setAvatar] = useState('');
+  
 
   const updateAvatar = (avatar) => {
     setAvatar(avatar);
@@ -185,6 +186,7 @@ function App() {
     }
   };
 
+
   //html
   return (
     <div className="container">
@@ -193,7 +195,8 @@ function App() {
       <main className="main">
         <Intro />
         <Routes>
-          <Route path="/" element={<Landing />} />
+          <Route path="/" element={
+          <Landing />} />
           <Route
             path="/project"
             element={

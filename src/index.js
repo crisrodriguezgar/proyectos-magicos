@@ -30,14 +30,25 @@ app.listen(port, () => {
 
 app.get("/listprojects", async (req, res) => {
   const conn = await getConnection();
+  const sortFilterParam = req.query.sort;
+  let project= "";
+  if (sortFilterParam === null || sortFilterParam === "" || sortFilterParam === undefined) {
   const queryProject =
-    "SELECT * FROM projects INNER JOIN autor ON autor.idAutor = projects.fk_autor";
-  const [result] = await conn.query(queryProject);
-  conn.end();
+    "SELECT * FROM projects INNER JOIN autor ON autor.idAutor = projects.fk_autor ORDER BY nameProject ASC";
+  const [results] = await conn.query(queryProject);
+   project=results; 
+  }else{
+    const queryProject =
+    `SELECT * FROM projects INNER JOIN autor ON autor.idAutor = projects.fk_autor ORDER BY nameProject ${sortFilterParam}`;
+    const [results] = await conn.query(queryProject, [sortFilterParam]);
+    project=results; 
+  }
+
   res.json({
     msj: "todo OK hechicera",
-    data: result,
+    data: project,
   });
+  conn.end();
 });
 
 app.post("/createproject", async (req, res) => {

@@ -27,7 +27,7 @@ const Card = ({data, autorLanding, titleLanding, descLanding, sloganLanding, sho
           <p className="technologies_text">
             {data.technologies || 'React JS - HTML - CSS'}
           </p>
-          <a href={data.demo} target="_blank" rel="noreferrer">
+          {/* <a href={data.demo} target="_blank" rel="noreferrer">
             <button className="technologies_icon">
               <i className="fa-solid fa-globe technologies_icon-img"></i>
             </button>
@@ -36,7 +36,7 @@ const Card = ({data, autorLanding, titleLanding, descLanding, sloganLanding, sho
             <button className="technologies_icon">
               <i className="fa-brands fa-github technologies_icon-img"></i>
             </button>
-          </a>
+          </a>*/}
         </section>
       </section>
 

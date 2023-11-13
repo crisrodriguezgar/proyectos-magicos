@@ -14,8 +14,8 @@ const postToApi = (data) => {
     });
 };
 
-const getToApi = () => {
-  return fetch("https://proyectos-magicos.onrender.com/listprojects")
+const getToApi = (params) => {
+  return fetch(`https://proyectos-magicos.onrender.com/listprojects?sort=${params.sort}`)
     .then((response) => response.json())
     .then((response) => {
       const cleanData = response.data.map((item) => {
