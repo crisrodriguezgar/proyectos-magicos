@@ -22,7 +22,7 @@ async function getConnection() {
   return connection;
 }
 
-const port = 3001;
+const port = 3002;
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);

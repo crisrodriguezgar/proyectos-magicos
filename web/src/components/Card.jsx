@@ -1,6 +1,17 @@
 import defaultAvatar from '../assets/avatar.png';
 import PropTypes from 'prop-types';
-const Card = ({data, autorLanding, titleLanding, descLanding, sloganLanding, showIcon}) => {
+const Card = ({
+  data,
+  autorLanding,
+  titleLanding,
+  descLanding,
+  sloganLanding,
+  showIcon,
+}) => {
+  const handleRemoveCard = () => {
+    console.log('estoy borrando');
+  };
+
   const avatarAutor = data.image === '' ? defaultAvatar : data.image;
   return (
     <section className={`preview_autor ${autorLanding}`}>
@@ -27,16 +38,12 @@ const Card = ({data, autorLanding, titleLanding, descLanding, sloganLanding, sho
           <p className="technologies_text">
             {data.technologies || 'React JS - HTML - CSS'}
           </p>
-          {/* <a href={data.demo} target="_blank" rel="noreferrer">
-            <button className="technologies_icon">
-              <i className="fa-solid fa-globe technologies_icon-img"></i>
-            </button>
-          </a>
-          <a href={data.repo} target="_blank" rel="noreferrer">
-            <button className="technologies_icon">
-              <i className="fa-brands fa-github technologies_icon-img"></i>
-            </button>
-          </a>*/}
+          <button src={data.demo} target="_blank" className="technologies_icon">
+            <i className="fa-solid fa-globe technologies_icon-img"></i>
+          </button>
+          <button src={data.repo} target="_blank" className="technologies_icon">
+            <i className="fa-brands fa-github technologies_icon-img"></i>
+          </button>
         </section>
       </section>
 
@@ -47,9 +54,11 @@ const Card = ({data, autorLanding, titleLanding, descLanding, sloganLanding, sho
         ></div>
         <p className="infoAutor_job">{data.job || 'Full Stack Developer'}</p>
         <p className="infoAutor_name">{data.autor || 'Emmelie Björklund'}</p>
-        <button className="btn">{showIcon ? (
-          <i className="fa-regular fa-trash-can fa-2xl btn_iconTrash"></i>
-        ) : null}</button>
+        <button className="btn" onClick={handleRemoveCard}>
+          {showIcon ? (
+            <i className="fa-regular fa-trash-can fa-2xl btn_iconTrash"></i>
+          ) : null}
+        </button>
       </section>
     </section>
   );
