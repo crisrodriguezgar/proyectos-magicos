@@ -7,11 +7,8 @@ const Card = ({
   descLanding,
   sloganLanding,
   showIcon,
+  handleRemoveCard,
 }) => {
-  const handleRemoveCard = () => {
-    console.log('estoy borrando');
-  };
-
   const avatarAutor = data.image === '' ? defaultAvatar : data.image;
   return (
     <section className={`preview_autor ${autorLanding}`}>
@@ -54,7 +51,10 @@ const Card = ({
         ></div>
         <p className="infoAutor_job">{data.job || 'Full Stack Developer'}</p>
         <p className="infoAutor_name">{data.autor || 'Emmelie Björklund'}</p>
-        <button className="btn" onClick={handleRemoveCard}>
+        <button
+          className="btn"
+          onClick={() => handleRemoveCard(data.idProject)}
+        >
           {showIcon ? (
             <i className="fa-regular fa-trash-can fa-2xl btn_iconTrash"></i>
           ) : null}
