@@ -9,11 +9,16 @@ const Landing = () => {
   const [dataProjects, setDataProjects] = useState([]);
   const [allProjectsOptionSort, setAllProjectsOptionSort] = useState('asc');
 
-  const handleAllProjectsOptions = (data) => {
-    if (data.key === 'sort') {
-      setAllProjectsOptionSort(data.value);
-    }
-  };
+
+    const handleAllProjectsOptions = (ev) => {
+      const inputValue= ev.target.value;
+      const inputKey = ev.target.name; 
+      if (inputKey === 'sort') {
+        setAllProjectsOptionSort(inputValue); 
+      } 
+      };
+
+
 
   const handleRemoveCard = async (projectId) => {
     console.log('estoy borrando');
@@ -35,7 +40,6 @@ const Landing = () => {
       const dataApi = response;
       console.log(dataApi);
       setDataProjects(dataApi);
-      console.log(dataProjects);
     });
   }, [allProjectsOptionSort]);
 
@@ -64,12 +68,14 @@ const Landing = () => {
 
   return (
     <>
+     <div className="divIntro">
       <Btn text={'Nuevo Proyecto'} route={'/project'} />
-      {/*   <div className="divSort">
-        <label className="labelSort">
-          Ordernar: A-Z
+      <div className="divSort">
+        <label className="labelSort" htmlFor="sortAsc">
+          A-Z
           <input
             className="inputSort"
+            id="sortAsc"
             type="radio"
             name="sort"
             value="asc"
@@ -78,10 +84,11 @@ const Landing = () => {
           />
         </label>
 
-        <label className="labelSort">
+        <label className="labelSort"htmlFor="sortDesc">
           Z-A
           <input
             className="inputSort"
+            id="sortDesc"
             type="radio"
             name="sort"
             value="desc"
@@ -89,7 +96,8 @@ const Landing = () => {
             onChange={handleAllProjectsOptions}
           />
         </label>
-      </div> */}
+      </div> 
+      </div>
       <section className="preview previewLanding">{renderProjects()}</section>
     </>
   );

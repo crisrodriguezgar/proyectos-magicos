@@ -89,7 +89,32 @@
   }
 }
 
-.divSort {
-  background-color: aqua;
-  margin-block:5rem;
+.divIntro{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @media (min-width: 768px) {
+    grid-column: 1/3;
+    grid-row: 2/3;
+  }
+}
+.divSort{
+  display: flex;
+  gap: 2rem; 
+  align-items: center;
+}
+
+
+.labelSort{
+  @include font($fontRoboto, 1.4rem, $white, bold);
+  border-radius: 2rem;
+  border: 1px solid $dark-lilac;
+  cursor: pointer;
+  text-transform: uppercase;
+  @include padding(1rem, 0.5rem);
+  background-color: $dusk;
+}
+
+.inputSort {
+  display: none;
 }

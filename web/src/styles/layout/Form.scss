@@ -192,7 +192,7 @@
     &-link {
       text-decoration: none;
       margin-bottom: 3rem;
-      @include font($fontMonserrat, 1rem, $dark-lilac, 300);
+      @include font($fontMonserrat, 1rem, $dark-lilac, bold);
       overflow-wrap: break-word;
       cursor: pointer;
       @media (min-width: 768px) {
