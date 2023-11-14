@@ -65,7 +65,7 @@ const Landing = () => {
   return (
     <>
       <Btn text={'Nuevo Proyecto'} route={'/project'} />
-      <div className="divSort">
+      {/*   <div className="divSort">
         <label className="labelSort">
           Ordernar: A-Z
           <input
@@ -89,7 +89,7 @@ const Landing = () => {
             onChange={handleAllProjectsOptions}
           />
         </label>
-      </div>
+      </div> */}
       <section className="preview previewLanding">{renderProjects()}</section>
     </>
   );
