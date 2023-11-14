@@ -2,7 +2,8 @@ import '../styles/layout/Landing.scss';
 import Btn from './Btn';
 import Card from './Card';
 import objectApi from '../services/api';
-import {useEffect, useState} from 'react';
+import { useEffect, useState } from 'react';
+import objectToExport from '../services/localStorage';
 
 const Landing = () => {
   const [dataProjects, setDataProjects] = useState([]);
@@ -16,9 +17,9 @@ const Landing = () => {
 
   const handleRemoveCard = async (projectId) => {
     console.log('estoy borrando');
-
     // const message = await objectApi.deleteProject(projectId);
     // console.log(message);
+    objectApi.delete(projectId);
 
     setDataProjects(
       (projects) =>

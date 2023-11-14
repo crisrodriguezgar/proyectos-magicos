@@ -10,6 +10,12 @@ const Card = ({
   handleRemoveCard,
 }) => {
   const avatarAutor = data.image === '' ? defaultAvatar : data.image;
+  const onDelete = (event) => {
+    event.preventDefault();
+    console.log('he hecho clicl');
+    handleRemoveCard(data.idProject);
+  };
+
   return (
     <section className={`preview_autor ${autorLanding}`}>
       <section className="infoProject">
@@ -47,14 +53,11 @@ const Card = ({
       <section className="infoAutor">
         <div
           className="infoAutor_image"
-          style={{backgroundImage: `url(${avatarAutor})`}}
+          style={{ backgroundImage: `url(${avatarAutor})` }}
         ></div>
         <p className="infoAutor_job">{data.job || 'Full Stack Developer'}</p>
         <p className="infoAutor_name">{data.autor || 'Emmelie Björklund'}</p>
-        <button
-          className="btn"
-          onClick={() => handleRemoveCard(data.idProject)}
-        >
+        <button className="btn" onClick={onDelete}>
           {showIcon ? (
             <i className="fa-regular fa-trash-can fa-2xl btn_iconTrash"></i>
           ) : null}
