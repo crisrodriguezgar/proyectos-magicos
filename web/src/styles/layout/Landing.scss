@@ -89,7 +89,7 @@
   }
 }
 
-.divIntro{
+.divIntro {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -98,14 +98,13 @@
     grid-row: 2/3;
   }
 }
-.divSort{
+.divSort {
   display: flex;
-  gap: 2rem; 
+  gap: 2rem;
   align-items: center;
 }
 
-
-.labelSort{
+.labelSort {
   @include font($fontRoboto, 1.4rem, $white, bold);
   border-radius: 2rem;
   border: 1px solid $dark-lilac;
@@ -117,4 +116,7 @@
 
 .inputSort {
   display: none;
+}
+.clicked {
+  background-color: #9e166398;
 }

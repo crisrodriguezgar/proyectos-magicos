@@ -9,16 +9,13 @@ const Landing = () => {
   const [dataProjects, setDataProjects] = useState([]);
   const [allProjectsOptionSort, setAllProjectsOptionSort] = useState('asc');
 
-
-    const handleAllProjectsOptions = (ev) => {
-      const inputValue= ev.target.value;
-      const inputKey = ev.target.name; 
-      if (inputKey === 'sort') {
-        setAllProjectsOptionSort(inputValue); 
-      } 
-      };
-
-
+  const handleAllProjectsOptions = (ev) => {
+    const inputValue = ev.target.value;
+    const inputKey = ev.target.name;
+    if (inputKey === 'sort') {
+      setAllProjectsOptionSort(inputValue);
+    }
+  };
 
   const handleRemoveCard = async (projectId) => {
     console.log('estoy borrando');
@@ -68,35 +65,45 @@ const Landing = () => {
 
   return (
     <>
-     <div className="divIntro">
-      <Btn text={'Nuevo Proyecto'} route={'/project'} />
-      <div className="divSort">
-        <label className="labelSort" htmlFor="sortAsc">
-          A-Z
-          <input
-            className="inputSort"
-            id="sortAsc"
-            type="radio"
-            name="sort"
-            value="asc"
-            checked={allProjectsOptionSort === 'asc'}
-            onChange={handleAllProjectsOptions}
-          />
-        </label>
+      <div className="divIntro">
+        <Btn text={'Nuevo Proyecto'} route={'/project'} />
+        <div className="divSort">
+          <label
+            className={`labelSort ${
+              allProjectsOptionSort === 'asc' ? 'clicked' : ''
+            }`}
+            htmlFor="sortAsc"
+          >
+            A-Z
+            <input
+              className="inputSort"
+              id="sortAsc"
+              type="radio"
+              name="sort"
+              value="asc"
+              checked={allProjectsOptionSort === 'asc'}
+              onChange={handleAllProjectsOptions}
+            />
+          </label>
 
-        <label className="labelSort"htmlFor="sortDesc">
-          Z-A
-          <input
-            className="inputSort"
-            id="sortDesc"
-            type="radio"
-            name="sort"
-            value="desc"
-            checked={allProjectsOptionSort === 'desc'}
-            onChange={handleAllProjectsOptions}
-          />
-        </label>
-      </div> 
+          <label
+            className={`labelSort ${
+              allProjectsOptionSort === 'desc' ? 'clicked' : ''
+            }`}
+            htmlFor="sortDesc"
+          >
+            Z-A
+            <input
+              className="inputSort"
+              id="sortDesc"
+              type="radio"
+              name="sort"
+              value="desc"
+              checked={allProjectsOptionSort === 'desc'}
+              onChange={handleAllProjectsOptions}
+            />
+          </label>
+        </div>
       </div>
       <section className="preview previewLanding">{renderProjects()}</section>
     </>
