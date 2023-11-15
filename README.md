@@ -11,7 +11,7 @@ El diseño principal nos fue entregado por el Product Owner de Adalab a través 
 
 En pleno desarrollo del sitio web, el Product Owner autorizó los cambios que propusimos. Esto ha permitido que el diseño experimentara una metamorfosis mágica con la incorporación de tonos granates, lilas y morados del fondo y los botones. También se ha cambiado por ejemplo, el icono a un gatito (fiel compañero de las brujas), el cual nos redirige a la página de inicio.
 
-Sin embargo, lo más destacado es, sin duda, la estela de luz que acompaña al cursor durante la navegación, Que le ortorga un aura verdaderamente embrujada.
+Sin embargo, lo más destacado es, sin duda, la estela de luz que acompaña al cursor durante la navegación, que le ortorga un aura verdaderamente embrujada.
 
 ## :stars: Descripción del proyecto
 
@@ -32,9 +32,9 @@ También es necesario cumplementar los datos de la autora:
     - Nombre del autor
     - Puesto de trabajo.
   
-- **Sección de Preview**: Para saber como va quedando, a medida que el usuario escribe sus datos, se irán volcando en una Preview.
+- **Sección de Preview**: Para saber como va quedando, a medida que la usuaria escribe sus datos, se irán volcando en una Preview.
 
-- **Sección Tarjeta**: Una vez que al usuario le gusta como ha quedado la tarjeta de su proyecto, puede generar un enlace con la vista maquetada de la información en una página detalle.
+- **Sección Tarjeta**: Una vez que a la usuaria le gusta como ha quedado la tarjeta de su proyecto, puede generar un enlace con la vista maquetada de la información en una página detalle.
 
 Además, si por algún motivo la usuaria necesita terminar de completar el formulario más tarde, no pasa nada, los datos se guardan en el Local Storage.
 
@@ -49,8 +49,10 @@ Si además necesita borrar estos datos también tiene disponible un botón de Re
 5. **Zeplin** - Plantilla de diseño
 6. **Git** - Para el control de versiones.
 7. **Github** - Como repositorio remoto.
-8. **Github Pages** - Para su publicación.
-9. **MySQL Workbench** -  sistema de gestión de bases de datos que funciona como cliente de MySQL
+8. **Github Pages** - Para la publicación, sin base de datos.
+9. **MySQL Workbench** -  Sistema de gestión de bases de datos que funciona como cliente de MySQL
+10. **Freedb.tech** - Servidor de base de datos en linea
+11. **Render** - Para la publicación, con base de datos.
    
 ## Equipo de desarrollo
 
