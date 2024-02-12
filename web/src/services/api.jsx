@@ -42,7 +42,7 @@ const getToApi = (params) => {
 const deleteProject = (projectId) => {
   // Llamamos a la API
   console.log(projectId);
-  return fetch(`https://proyectos-magicos.onrender.com/project/${projectId}`, {
+  return fetch(`https://proyectosmagicos.onrender.com/project/${projectId}`, {
     method: 'DELETE',
     headers: { 'Content-Type': 'application/json' },
   })
