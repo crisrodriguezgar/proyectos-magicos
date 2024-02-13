@@ -2,7 +2,7 @@ import '../styles/layout/Landing.scss';
 import Btn from './Btn';
 import Card from './Card';
 import objectApi from '../services/api';
-import { useEffect, useState } from 'react';
+import {useEffect, useState} from 'react';
 import objectToExport from '../services/localStorage';
 
 const Landing = () => {
@@ -44,7 +44,7 @@ const Landing = () => {
     return dataProjects.map((project) => {
       return (
         <a
-          href={`https://proyectos-magicos.onrender.com/project/${project.idProject}`}
+          href={`https://proyectosmagicos.onrender.com//project/${project.idProject}`}
           key={project.idProject}
           className="cardClick"
         >
