@@ -1,9 +1,9 @@
 const postToApi = (data) => {
   // Llamamos a la API
   console.log(data);
-  return fetch('https://proyectos-magicos.onrender.com/createproject', {
+  return fetch('https://proyectosmagicos.onrender.com/createproject', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers: {'Content-Type': 'application/json'},
     body: JSON.stringify(data),
   })
     .then((response) => response.json())
@@ -16,7 +16,7 @@ const postToApi = (data) => {
 
 const getToApi = (params) => {
   return fetch(
-    `https://proyectos-magicos.onrender.com/listprojects?sort=${params.sort}`
+    `https://proyectosmagicos.onrender.com/listprojects?sort=${params.sort}`
   )
     .then((response) => response.json())
     .then((response) => {
@@ -42,9 +42,9 @@ const getToApi = (params) => {
 const deleteProject = (projectId) => {
   // Llamamos a la API
   console.log(projectId);
-  return fetch(`https://proyectos-magicos.onrender.com/project/${projectId}`, {
+  return fetch(`https://proyectosmagicos.onrender.com/project/${projectId}`, {
     method: 'DELETE',
-    headers: { 'Content-Type': 'application/json' },
+    headers: {'Content-Type': 'application/json'},
   })
     .then((response) => response.json())
     .then((result) => {

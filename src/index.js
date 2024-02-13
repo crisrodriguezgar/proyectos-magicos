@@ -5,7 +5,7 @@ require('dotenv').config();
 
 const app = express();
 app.use(cors());
-app.use(express.json({ limit: '100MB' }));
+app.use(express.json({limit: '100MB'}));
 app.set('view engine', 'ejs');
 
 //conexión a la bases de datos
@@ -83,7 +83,7 @@ app.post('/createproject', async (req, res) => {
   }
   idProject = result2[0].insertId;
   res.json({
-    cardURL: 'https://proyectos-magicos.onrender.com/project/' + idProject,
+    cardURL: 'https://proyectosmagicos.onrender.com/project/' + idProject,
     success: true,
   });
   conn.end();
@@ -126,7 +126,7 @@ app.delete('/project/:idProject', async (req, res) => {
   }
 });
 
-const staticServerPath = './web/dist';
+const staticServerPath = './src/public-react/';
 app.use(express.static(staticServerPath));
 
 const pathServerPublicStyles = './src/public-css';
