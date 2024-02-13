@@ -46,7 +46,7 @@ const Landing = ({handleChange, projectFilter}) => {
 
     return filteredProjects.map((project) => (
       <a
-        href={`https://proyectosmagicos.onrender.com/project/${project.idProject}`}
+        href={`https://proyectos-magicos.onrender.com/project/${project.idProject}`}
         key={project.idProject}
         className="cardClick"
       >
