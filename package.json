@@ -1,5 +1,5 @@
 {
-  "name": "project-promo-u-module-3-team-2",
+  "name": "proyectos-magicos",
   "version": "1.0.0",
   "description": "Proyectos Molones",
   "main": "index.js",
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Adalab/project-promo-U-module-3-team-2.git"
+    "url": "git+https://github.com/crisrodriguezgar/proyectos-magicos.git"
   },
   "author": "Cris Mayte Mireia Alba",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Adalab/project-promo-U-module-3-team-2/issues"
+    "url": "https://github.com/crisrodriguezgar/proyectos-magicos/issues"
   },
-  "homepage": "https://github.com/Adalab/project-promo-U-module-3-team-2#readme",
+  "homepage": "https://github.com/crisrodriguezgar/proyectos-magicos#readme",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",

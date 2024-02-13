@@ -1,80 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%=project.nameProject%></title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Catamaran:wght@500;700&family=Montserrat:wght@300;400;700&family=Poppins:wght@300;400;500&family=Roboto:wght@700&display=swap"
-      rel="stylesheet"
-    />
-    <script
-      src="https://kit.fontawesome.com/bcc6ce623e.js"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="stylesheet" href="/main.css" />
-    <link rel="icon" type="image/svg+xml" href="/cat.svg" />
-  </head>
-  <body>
-    <div class="container">
-      <header class="header">
-        <a href="https://proyectos-magicos.onrender.com/">
-          <div class="header_left">
-            <i class="fa-solid fa-cat fa-2xl header_left-icon"></i>
-            <p class="header_left-text">Proyectos Mágicos</p>
-          </div></a
-        >
-       <img
-          class="header_logo"
-          src="/logo-adalab.png"
-          alt="Logo Adalab"
-        />
-      </header>
-      <main class="main">
-        <section class="preview">
-          <div
-            class="preview_image"
-            style="background-image: url('<%=project.imageProject%>')"
-          ></div>
-          <section class="preview_autor">
-            <section class="infoProject">
-              <div class="infoProject_container">
-                <hr class="infoProject_container-line1" />
-                <p class="infoProject_container-subtitle">
-                  Personal Project Card
-                </p>
-                <hr class="infoProject_container-line2" />
-              </div>
-              <h2 class="infoProject_title"><%=project.nameProject%></h2>
-              <p class="infoProject_slogan"><%=project.sloganProject%></p>
-              <p class="infoProject_desc"><%=project.descProject%></p>
-              <section class="technologies">
-                <p class="technologies_text"><%=project.techProject%></p>
-                <a href="<%=project.urlDemo%>" target="_blank" rel="noreferrer">
-                  <button class="technologies_icon">
-                    <i class="fa-solid fa-globe technologies_icon-img"></i>
-                  </button>
-                </a>
-                <a href="<%=project.urlGit%>" target="_blank" rel="noreferrer">
-                  <button class="technologies_icon">
-                    <i class="fa-brands fa-github technologies_icon-img"></i>
-                  </button>
-                </a>
-              </section>
-            </section>
-            <section class="infoAutor">
-              <div
-                class="infoAutor_image"
-                style="background-image: url('<%=project.imageAutor%>')"
-              ></div>
-              <p class="infoAutor_job"><%=project.jobAutor%></p>
-              <p class="infoAutor_name"><%=project.nameAutor%></p>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>
+    <%=project.nameProject%>
+  </title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Catamaran:wght@500;700&family=Montserrat:wght@300;400;700&family=Poppins:wght@300;400;500&family=Roboto:wght@700&display=swap"
+    rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/bcc6ce623e.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/main.css" />
+  <link rel="icon" type="image/svg+xml" href="/cat.svg" />
+</head>
+
+<body>
+  <div class="container">
+    <header class="header">
+      <a href="https://proyectosmagicos.onrender.com/">
+        <div class="header_left">
+          <i class="fa-solid fa-cat fa-2xl header_left-icon"></i>
+          <p class="header_left-text">Proyectos Mágicos</p>
+        </div>
+      </a>
+      <img class="header_logo" src="/logo-adalab.png" alt="Logo Adalab" />
+    </header>
+    <main class="main">
+      <section class="preview">
+        <div class="preview_image" style="background-image: url('<%=project.imageProject%>')"></div>
+        <section class="preview_autor">
+          <section class="infoProject">
+            <div class="infoProject_container">
+              <hr class="infoProject_container-line1" />
+              <p class="infoProject_container-subtitle">
+                Personal Project Card
+              </p>
+              <hr class="infoProject_container-line2" />
+            </div>
+            <h2 class="infoProject_title">
+              <%=project.nameProject%>
+            </h2>
+            <p class="infoProject_slogan">
+              <%=project.sloganProject%>
+            </p>
+            <p class="infoProject_desc">
+              <%=project.descProject%>
+            </p>
+            <section class="technologies">
+              <p class="technologies_text">
+                <%=project.techProject%>
+              </p>
+              <a href="<%=project.urlDemo%>" target="_blank" rel="noreferrer">
+                <button class="technologies_icon">
+                  <i class="fa-solid fa-globe technologies_icon-img"></i>
+                </button>
+              </a>
+              <a href="<%=project.urlGit%>" target="_blank" rel="noreferrer">
+                <button class="technologies_icon">
+                  <i class="fa-brands fa-github technologies_icon-img"></i>
+                </button>
+              </a>
             </section>
           </section>
+          <section class="infoAutor">
+            <div class="infoAutor_image" style="background-image: url('<%=project.imageAutor%>')"></div>
+            <p class="infoAutor_job">
+              <%=project.jobAutor%>
+            </p>
+            <p class="infoAutor_name">
+              <%=project.nameAutor%>
+            </p>
+          </section>
         </section>
-      </main>
-    </div>
-  </body>
+      </section>
+    </main>
+  </div>
+</body>
+
 </html>
