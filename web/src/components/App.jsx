@@ -1,6 +1,6 @@
 //imports dependencias, imagenes, de otros componentes, de estilos
-import {Route, Routes} from 'react-router-dom';
-import React, {useState} from 'react';
+import { Route, Routes } from 'react-router-dom';
+import React, { useState } from 'react';
 
 import '../styles/App.scss';
 import objectApi from '../services/api';
@@ -26,7 +26,6 @@ function App() {
     photo: '',
     image: '',
   });
-
   const [data, setData] = useState(localStorageData);
   const [errorName, setErrorName] = useState('');
   const [errorSlogan, setErrorSlogan] = useState('');
@@ -41,24 +40,25 @@ function App() {
   const [responseUrl, setResponseUrl] = useState('');
   const [isHidden, setIsHidden] = useState(true);
   const [avatar, setAvatar] = useState('');
+  
 
   const updateAvatar = (avatar) => {
     setAvatar(avatar);
     data.image = avatar;
-    ls.set('data', {...data, image: avatar});
+    ls.set('data', { ...data, image: avatar });
   };
   const [project, setProject] = useState('');
   const updateProject = (project) => {
     setProject(project);
     data.photo = project;
-    ls.set('data', {...data, photo: project});
+    ls.set('data', { ...data, photo: project });
   };
 
   const handleInput = (inputId, inputValue) => {
-    setData({...data, [inputId]: inputValue});
-    ls.set('data', {...data, [inputId]: inputValue});
+    setData({ ...data, [inputId]: inputValue });
+    ls.set('data', { ...data, [inputId]: inputValue });
   };
-
+ 
   const handleReset = () => {
     const emptyData = {
       name: '',
@@ -71,7 +71,7 @@ function App() {
       job: '',
       photo: '',
       image: '',
-    };
+    }
     setErrorName('');
     setErrorSlogan('');
     setErrorRepo('');
@@ -82,8 +82,8 @@ function App() {
     setErrorPhoto('');
     setErrorAutor('');
     setErrorTech('');
-    ls.clear();
-    setIsHidden(true);
+    ls.clear ();
+    setIsHidden (true);
     setData(emptyData);
   };
 
@@ -186,33 +186,17 @@ function App() {
     }
   };
 
-  const [projectFilter, setProjectFilter] = useState(
-    ls.get('movieFilterLS', '')
-  );
-
-  const handleChange = (value) => {
-    setProjectFilter(value);
-    //console.log(value);
-  };
 
   //html
   return (
     <div className="container">
-      {/* <CreateTrail /> */}
+      <CreateTrail />
       <Header />
       <main className="main">
         <Intro />
         <Routes>
-          <Route
-            path="/"
-            element={
-              <Landing
-                handleChange={handleChange}
-                projectFilter={projectFilter}
-              />
-            }
-          />
-
+          <Route path="/" element={
+          <Landing />} />
           <Route
             path="/project"
             element={
