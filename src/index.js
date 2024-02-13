@@ -83,7 +83,7 @@ app.post('/createproject', async (req, res) => {
   }
   idProject = result2[0].insertId;
   res.json({
-    cardURL: 'https://proyectosmagicos.onrender.com/project/' + idProject,
+    cardURL: 'https://proyectos-magicos.onrender.com/project/' + idProject,
     success: true,
   });
   conn.end();
