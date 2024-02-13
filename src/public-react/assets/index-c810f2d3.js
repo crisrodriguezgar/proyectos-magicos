@@ -10100,7 +10100,7 @@ function _h(e, t) {
 }
 const Th = (e) => (
     console.log(e),
-    fetch('https://proyectosmagicos.onrender.com//createproject', {
+    fetch('https://proyectosmagicos.onrender.com/createproject', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(e),
@@ -10111,7 +10111,7 @@ const Th = (e) => (
       })
   ),
   Rh = (e) =>
-    fetch(`https://proyectosmagicos.onrender.com//listprojects?sort=${e.sort}`)
+    fetch(`https://proyectosmagicos.onrender.com/listprojects?sort=${e.sort}`)
       .then((t) => t.json())
       .then((t) =>
         t.data.map((r) => ({
@@ -10131,7 +10131,7 @@ const Th = (e) => (
       ),
   Lh = (e) => (
     console.log(e),
-    fetch(`https://proyectosmagicos.onrender.com//project/${e}`, {
+    fetch(`https://proyectosmagicos.onrender.com/project/${e}`, {
       method: 'DELETE',
       headers: {'Content-Type': 'application/json'},
     })
@@ -10734,7 +10734,7 @@ const Kh = () => {
       g.jsx(
         'a',
         {
-          href: `https://proyectosmagicos.onrender.com//project/${u.idProject}`,
+          href: `https://proyectosmagicos.onrender.com/project/${u.idProject}`,
           className: 'cardClick',
           children: g.jsx(
             iu,

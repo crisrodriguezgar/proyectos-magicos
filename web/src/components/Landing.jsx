@@ -44,7 +44,7 @@ const Landing = () => {
     return dataProjects.map((project) => {
       return (
         <a
-          href={`https://proyectosmagicos.onrender.com//project/${project.idProject}`}
+          href={`https://proyectosmagicos.onrender.com/project/${project.idProject}`}
           key={project.idProject}
           className="cardClick"
         >
