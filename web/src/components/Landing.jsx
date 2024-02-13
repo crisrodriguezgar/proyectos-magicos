@@ -2,9 +2,9 @@ import '../styles/layout/Landing.scss';
 import Btn from './Btn';
 import Card from './Card';
 import objectApi from '../services/api';
-import { useEffect, useState } from 'react';
+import {useEffect, useState} from 'react';
 
-const Landing = ({ handleChange, projectFilter }) => {
+const Landing = ({handleChange, projectFilter}) => {
   const [dataProjects, setDataProjects] = useState([]);
   const [allProjectsOptionSort, setAllProjectsOptionSort] = useState('asc');
 
@@ -24,8 +24,8 @@ const Landing = ({ handleChange, projectFilter }) => {
     console.log('estoy borrando');
     objectApi.delete(projectId);
 
-    setDataProjects(projects =>
-      projects.filter(proyect => proyect.idProject !== projectId)
+    setDataProjects((projects) =>
+      projects.filter((proyect) => proyect.idProject !== projectId)
     );
   };
 
@@ -40,13 +40,13 @@ const Landing = ({ handleChange, projectFilter }) => {
   }, [allProjectsOptionSort]);
 
   const renderProjects = () => {
-    const filteredProjects = dataProjects.filter(project =>
+    const filteredProjects = dataProjects.filter((project) =>
       project.name.toLowerCase().includes(projectFilter.toLowerCase())
     );
 
     return filteredProjects.map((project) => (
       <a
-        href={`https://proyectosmagicos.onrender.com/project/${project.idProject}`}
+        href={`https://proyectos-magicos.onrender.com/project/${project.idProject}`}
         key={project.idProject}
         className="cardClick"
       >
